@@ -130,9 +130,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: '5HXMI8QJO0',
+      apiKey: '5f2ef4698fa0b13503ac75567b2e948b',
+      indexName: 'github_blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -197,7 +197,7 @@
 
 <nav class="site-nav">
   
-
+  
   
     <ul id="menu" class="menu">
       
@@ -283,9 +283,42 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+              <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="algolia-popup popup">
+<div class="algolia-search">
+    <div class="algolia-search-input-icon">
+    <i class="fa fa-search"></i>
+    </div>
+    <div class="algolia-search-input" id="algolia-search-input"></div>
+</div>
+<div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+<span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -872,13 +905,13 @@ var jiathis_config={
   <!-- 添加页面小宠物 -->
   
 <div id="hexo-helper-live2d">
-  <canvas id="null" width="0" height="0"></canvas>
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
 </div>
 <style>
-  #null{
+  #live2dcanvas{
     position: fixed;
-    width: nullpx;
-    height: nullpx;
+    width: 150px;
+    height: 300px;
     opacity:0.7;
     right: 0px;
     z-index: 999;
@@ -896,9 +929,26 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
     return;
   }else
     if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
-  loadScript("/live2d/script.js", function(){loadlive2d(null, "/live2d/assets/nipsilon.model.json", 0.5);});
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/nipsilon.model.json", 0.5);});
 })();
 </script>
 
+  <!-- 添加algolia搜索 -->
+  
+    
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script type="text/javascript" src="/js/src/algolia.js?v=5.1.4"></script>
+
+  
 </body>
 </html>
