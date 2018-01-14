@@ -1840,7 +1840,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e91155;
+  background: #9f98ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3017,7 +3017,7 @@ pre .javascript .function {
 }
 鼠标样式,
 * {
-  cursor: url("/images/pointer13.ico"), auto !important;
+  cursor: url("../images/pointer13.ico"), auto !important;
 }
 :active {
   cursor: url("../../../images/mouse5.ico"), auto !important;
