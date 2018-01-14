@@ -5,35 +5,49 @@
     
   <url>
     <loc>http://github.ymlsfly.xin/2018/01/13/TestStudy/</loc>
-    <lastmod>2018-01-13T16:22:40.501Z</lastmod>
+    <lastmod>2018-01-14T13:25:56.440Z</lastmod>
     <data>
         <display>
         <title>TestStudy</title>
         <pubTime>2018-01-13T07:31:55.000Z</pubTime>
         
+        <tag>学习</tag>
+         
+        <tag>入门</tag>
+         
          
            
+             
+              <breadCrumb title="学习" url="http://github.ymlsfly.xin/categories/%E5%AD%A6%E4%B9%A0/"/>
+          
         </display>
     </data>
     </url>
 
     
     
-    
   <url>
     <loc>http://github.ymlsfly.xin/2018/01/12/hello-world/</loc>
-    <lastmod>2018-01-12T07:54:23.246Z</lastmod>
+    <lastmod>2018-01-14T13:01:46.775Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
         <pubTime>2018-01-12T03:42:48.341Z</pubTime>
         
+        <tag>hello</tag>
+         
          
            
+             
+              <breadCrumb title="默认" url="http://github.ymlsfly.xin/categories/%E9%BB%98%E8%AE%A4/"/>
+          
         </display>
     </data>
     </url>
 
+    
+    
+    
     
     
   <url>
