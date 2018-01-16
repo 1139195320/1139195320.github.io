@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://github.ymlsfly.xin/2018/01/16/%E7%94%A8Java%E6%9D%A5%E5%8F%91%E9%82%AE%E4%BB%B6/</loc>
+    <lastmod>2018-01-16T14:32:27.250Z</lastmod>
+    <data>
+        <display>
+        <title>用Java来发邮件</title>
+        <pubTime>2018-01-16T13:10:45.000Z</pubTime>
+        
+        <tag>java , mail</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://github.ymlsfly.xin/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://github.ymlsfly.xin/2018/01/13/TestStudy/</loc>
     <lastmod>2018-01-14T13:25:56.440Z</lastmod>
     <data>
@@ -49,19 +69,4 @@
     
     
     
-    
-  <url>
-    <loc>http://github.ymlsfly.xin/2018/01/12/my-name/</loc>
-    <lastmod>2018-01-12T04:00:07.110Z</lastmod>
-    <data>
-        <display>
-        <title>my-name</title>
-        <pubTime>2018-01-12T03:59:44.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
 </urlset>

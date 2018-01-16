@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16×16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32×32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java , mail," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="羊末离殇的独立博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="强大的Java也是可以发邮件的  案例一、在自己本机上搭邮件服务器体验邮件的发送接收预备条件： 先下载好Foxmail和易邮邮件服务器，可以直接百度下载，很方便，免费软件 案例中需要用到javax.mail的jar包，博主用的maven，此处附上maven坐标12345&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;javax.mail&amp;lt;/groupId&amp;gt;">
+<meta name="keywords" content="java , mail">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Java来发邮件">
+<meta property="og:url" content="http://github.ymlsfly.xin/2018/01/16/用Java来发邮件/index.html">
+<meta property="og:site_name" content="羊末离殇的独立博客">
+<meta property="og:description" content="强大的Java也是可以发邮件的  案例一、在自己本机上搭邮件服务器体验邮件的发送接收预备条件： 先下载好Foxmail和易邮邮件服务器，可以直接百度下载，很方便，免费软件 案例中需要用到javax.mail的jar包，博主用的maven，此处附上maven坐标12345&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;javax.mail&amp;lt;/groupId&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-16T14:32:27.250Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Java来发邮件">
+<meta name="twitter:description" content="强大的Java也是可以发邮件的  案例一、在自己本机上搭邮件服务器体验邮件的发送接收预备条件： 先下载好Foxmail和易邮邮件服务器，可以直接百度下载，很方便，免费软件 案例中需要用到javax.mail的jar包，博主用的maven，此处附上maven坐标12345&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;javax.mail&amp;lt;/groupId&amp;gt;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '5HXMI8QJO0',
+      apiKey: '5f2ef4698fa0b13503ac75567b2e948b',
+      indexName: 'github_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与${query}相关的内容","hits_stats":"找到${hits}条相关记录，耗时${time}毫秒"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>用Java来发邮件 | 羊末离殇的独立博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/1139195320"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">羊末离殇的独立博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">与代码的持久博弈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+  
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.ymlsfly.xin/2018/01/16/用Java来发邮件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="羊末离殇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="羊末离殇的独立博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">用Java来发邮件</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T21:10:45+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/01/16/用Java来发邮件/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/01/16/用Java来发邮件/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,357
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>强大的Java也是可以发邮件的</p>
+</blockquote>
+<h1 id="案例一、在自己本机上搭邮件服务器体验邮件的发送接收"><a href="#案例一、在自己本机上搭邮件服务器体验邮件的发送接收" class="headerlink" title="案例一、在自己本机上搭邮件服务器体验邮件的发送接收"></a>案例一、在自己本机上搭邮件服务器体验邮件的发送接收</h1><h2 id="预备条件："><a href="#预备条件：" class="headerlink" title="预备条件："></a>预备条件：</h2><ol>
+<li>先下载好Foxmail和易邮邮件服务器，可以直接百度下载，很方便，免费软件</li>
+<li>案例中需要用到javax.mail的jar包，博主用的maven，此处附上maven坐标<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;javax.mail&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mail&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.4.7&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h3 id="易邮邮件服务器是把自己本机作为邮件服务器，可以在本机上创建邮箱（自定义的邮箱，反正是服务器是你的电脑），切记本案例中易邮邮件服务器不能关闭，否则就和云服务器关闭了那样一个道理，用它创建的邮箱就不能用了。"><a href="#易邮邮件服务器是把自己本机作为邮件服务器，可以在本机上创建邮箱（自定义的邮箱，反正是服务器是你的电脑），切记本案例中易邮邮件服务器不能关闭，否则就和云服务器关闭了那样一个道理，用它创建的邮箱就不能用了。" class="headerlink" title="易邮邮件服务器是把自己本机作为邮件服务器，可以在本机上创建邮箱（自定义的邮箱，反正是服务器是你的电脑），切记本案例中易邮邮件服务器不能关闭，否则就和云服务器关闭了那样一个道理，用它创建的邮箱就不能用了。"></a>易邮邮件服务器是把自己本机作为邮件服务器，可以在本机上创建邮箱（自定义的邮箱，反正是服务器是你的电脑），切记本案例中易邮邮件服务器不能关闭，否则就和云服务器关闭了那样一个道理，用它创建的邮箱就不能用了。</h3><hr>
+<h3 id="Foxmail里面可以添加邮箱，属于本机的邮箱（如易邮邮件服务器创建的邮箱，本机有效，填写的服务器为localhost），和网上你申请的邮箱（如QQ邮箱、网易邮箱、Gmail邮箱等）均可，在此要注意QQ邮箱需要在网页打开邮箱-gt-设置-gt-账户-gt-开启服务（在中间靠下的位置）打开POP3-SMTP服务和IMAP-SMTP服务，若没打开后面第二个案例就会连不上了。"><a href="#Foxmail里面可以添加邮箱，属于本机的邮箱（如易邮邮件服务器创建的邮箱，本机有效，填写的服务器为localhost），和网上你申请的邮箱（如QQ邮箱、网易邮箱、Gmail邮箱等）均可，在此要注意QQ邮箱需要在网页打开邮箱-gt-设置-gt-账户-gt-开启服务（在中间靠下的位置）打开POP3-SMTP服务和IMAP-SMTP服务，若没打开后面第二个案例就会连不上了。" class="headerlink" title="Foxmail里面可以添加邮箱，属于本机的邮箱（如易邮邮件服务器创建的邮箱，本机有效，填写的服务器为localhost），和网上你申请的邮箱（如QQ邮箱、网易邮箱、Gmail邮箱等）均可，在此要注意QQ邮箱需要在网页打开邮箱-&gt;设置-&gt;账户-&gt;开启服务（在中间靠下的位置）打开POP3/SMTP服务和IMAP/SMTP服务，若没打开后面第二个案例就会连不上了。"></a>Foxmail里面可以添加邮箱，属于本机的邮箱（如易邮邮件服务器创建的邮箱，本机有效，填写的服务器为localhost），和网上你申请的邮箱（如QQ邮箱、网易邮箱、Gmail邮箱等）均可，在此要注意QQ邮箱需要在网页打开邮箱-&gt;设置-&gt;账户-&gt;开启服务（在中间靠下的位置）打开POP3/SMTP服务和IMAP/SMTP服务，若没打开后面第二个案例就会连不上了。</h3><hr>
+<h3 id="一定要在Foxmail中将在易邮邮件服务器中创建的邮箱添加进去，用于查看接收邮件"><a href="#一定要在Foxmail中将在易邮邮件服务器中创建的邮箱添加进去，用于查看接收邮件" class="headerlink" title="一定要在Foxmail中将在易邮邮件服务器中创建的邮箱添加进去，用于查看接收邮件"></a>一定要在Foxmail中将在易邮邮件服务器中创建的邮箱添加进去，用于查看接收邮件</h3><h2 id="终于开始撸本机邮件练习的代码部分了："><a href="#终于开始撸本机邮件练习的代码部分了：" class="headerlink" title="终于开始撸本机邮件练习的代码部分了："></a>终于开始撸本机邮件练习的代码部分了：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建连接对象，连接到邮箱服务器</span></span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">Session session = Session.getInstance(properties, <span class="keyword">new</span> Authenticator() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> PasswordAuthentication <span class="title">getPasswordAuthentication</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//用来连接邮箱服务器的一个邮箱账号（能连上本机邮箱服务器即可）</span></span><br><span class="line">        <span class="comment">//此处用的是易邮邮件服务器创建的邮箱（邮箱密码不能错，否则连不上服务器）</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> PasswordAuthentication(<span class="string">"user1@store.com"</span>, <span class="string">"123"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//1.1开启debug模式，可以看到邮件的发送状态（非必要）</span></span><br><span class="line">session.setDebug(<span class="keyword">true</span>);</span><br><span class="line"><span class="comment">//2.创建邮件对象</span></span><br><span class="line">Message message = <span class="keyword">new</span> MimeMessage(session);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//2.1设置发件人</span></span><br><span class="line">    <span class="comment">//此处设置的是接收者接收邮件上标注的发送者邮箱</span></span><br><span class="line">    <span class="comment">//本人同样是用的在易邮邮件服务器上创建的虚拟邮箱</span></span><br><span class="line">    message.setFrom(<span class="keyword">new</span> InternetAddress(<span class="string">"service@store.com"</span>));</span><br><span class="line">    <span class="comment">//2.2设置收件人</span></span><br><span class="line">    message.setRecipient(Message.RecipientType.TO, <span class="keyword">new</span> InternetAddress(<span class="string">"user2@store.com"</span>));</span><br><span class="line">    <span class="comment">//2.3设置邮件主题（标题）</span></span><br><span class="line">    message.setSubject(<span class="string">"一封测试邮件"</span>);</span><br><span class="line">    <span class="comment">//2.4设置邮件的正文</span></span><br><span class="line">    <span class="comment">//此处设置的邮件内容是html代码，可以很方便的在里面书写html代码，加链接等等</span></span><br><span class="line">    message.setContent(<span class="string">"&lt;h1&gt;邮件内容&lt;/h1&gt;"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">    <span class="comment">//3.发送一封邮件</span></span><br><span class="line">    Transport.send(message);</span><br><span class="line">    <span class="comment">//此时邮件正在发送，如果debug打开则可以在控制台看到打印的信息</span></span><br><span class="line">    <span class="comment">//发送成功后在Foxmail中点击菜单上的[收取]，邮件发送完成可以收到新邮件并打开查看</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="案例二、使用自己在网上申请的邮箱来通过代码发邮件"><a href="#案例二、使用自己在网上申请的邮箱来通过代码发邮件" class="headerlink" title="案例二、使用自己在网上申请的邮箱来通过代码发邮件"></a>案例二、使用自己在网上申请的邮箱来通过代码发邮件</h1><h2 id="预备条件：准备至少两个邮箱（否则只能单个邮箱自己发给自己了）"><a href="#预备条件：准备至少两个邮箱（否则只能单个邮箱自己发给自己了）" class="headerlink" title="预备条件：准备至少两个邮箱（否则只能单个邮箱自己发给自己了）"></a>预备条件：准备至少两个邮箱（否则只能单个邮箱自己发给自己了）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Properties prop = <span class="keyword">new</span> Properties();</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//必须采用加密，不然发不了，会报异常说不安全</span></span><br><span class="line">    MailSSLSocketFactory sf = <span class="keyword">new</span> MailSSLSocketFactory();</span><br><span class="line">    sf.setTrustAllHosts(<span class="keyword">true</span>);</span><br><span class="line">    prop.put(<span class="string">"mail.smtp.ssl.enable"</span>, <span class="string">"true"</span>);</span><br><span class="line">    prop.put(<span class="string">"mail.smtp.ssl.socketFactory"</span>, sf);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果是使用126邮箱，此处改为smtp.126.com即可</span></span><br><span class="line">    prop.setProperty(<span class="string">"mail.host"</span>, <span class="string">"smtp.qq.com"</span>);</span><br><span class="line">    prop.setProperty(<span class="string">"mail.transport.protocol"</span>, <span class="string">"smtp"</span>);</span><br><span class="line">    <span class="comment">//设置端口为465安全端口</span></span><br><span class="line">    prop.setProperty(<span class="string">"mail.smtp.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">    prop.setProperty(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</span><br><span class="line">    <span class="comment">//使用JavaMail发送邮件的5个步骤</span></span><br><span class="line">    <span class="comment">//1、创建session</span></span><br><span class="line">    Session session = Session.getInstance(prop);</span><br><span class="line">    <span class="comment">//开启Session的debug模式，这样就可以查看到程序发送Email的运行状态</span></span><br><span class="line">    session.setDebug(<span class="keyword">true</span>);</span><br><span class="line">    <span class="comment">//2、通过session得到transport对象</span></span><br><span class="line">    Transport ts = session.getTransport();</span><br><span class="line">    <span class="comment">//3、使用邮箱的用户名和密码连上邮件服务器，发送邮件时，发件人需要提交邮箱的用户名和密码给smtp服务器，用户名和密码都通过验证之后才能够正常发送邮件给收件人。</span></span><br><span class="line">    <span class="comment">//注意这里不是使用的邮箱密码，而是邮箱设置中的授权码</span></span><br><span class="line">    <span class="comment">//授权码在网页打开邮箱-&gt;设置-&gt;账户-&gt;开启服务旁边可以看到（如果是QQ邮箱则需要）</span></span><br><span class="line">    <span class="comment">//如果是其余的邮箱，如网易126邮箱，则不需要授权码，此处使用邮箱和密码，即可连接服务器</span></span><br><span class="line">    ts.connect(<span class="string">"smtp.qq.com"</span>, <span class="string">"******@qq.com"</span>, <span class="string">"******zhmj*****"</span>);</span><br><span class="line">    <span class="comment">//4、创建邮件</span></span><br><span class="line">    Message message = <span class="keyword">new</span> MimeMessage(session);</span><br><span class="line">    <span class="comment">//设置发件人</span></span><br><span class="line">    message.setFrom(<span class="keyword">new</span> InternetAddress(<span class="string">"******@qq.com"</span>));</span><br><span class="line">    <span class="comment">//设置收件人</span></span><br><span class="line">    message.setRecipient(Message.RecipientType.TO, <span class="keyword">new</span> InternetAddress(<span class="string">"******@126.com"</span>));</span><br><span class="line">    message.setSubject(<span class="string">"测试邮件"</span>);</span><br><span class="line">    <span class="comment">//设置邮件的正文</span></span><br><span class="line">    <span class="comment">//同上设置的html代码内容的邮件</span></span><br><span class="line">    message.setContent(<span class="string">"&lt;h1&gt;***测试邮件&lt;/h1&gt;"</span>, <span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line">    <span class="comment">//5、发送邮件</span></span><br><span class="line">    ts.sendMessage(message, message.getAllRecipients());</span><br><span class="line">    ts.close();</span><br><span class="line">    <span class="comment">//本案例中演示用的博主的qq邮箱向126邮箱发送邮件</span></span><br><span class="line">    <span class="comment">//切记QQ邮箱的特殊性，打开POP3/SMTP和IMAP/SMTP服务，以及使用授权码，Properties要设置SSL安全连接</span></span><br><span class="line">    <span class="comment">//连接服务器一定是发送邮件的邮箱的所在服务器</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    羊末离殇
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://github.ymlsfly.xin/2018/01/16/用Java来发邮件/" title="用Java来发邮件">http://github.ymlsfly.xin/2018/01/16/用Java来发邮件/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java-mail/" <i class="fa fa-tag"></i> java , mail</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/13/TestStudy/" rel="next" title="TestStudy">
+                <i class="fa fa-chevron-left"></i> TestStudy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.jpg"
+                alt="羊末离殇" />
+            
+              <p class="site-author-name" itemprop="name">羊末离殇</p>
+              <p class="site-description motion-element" itemprop="description">常常都是徘徊...清醒如酒</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/1139195320" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:fy1139195320@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#案例一、在自己本机上搭邮件服务器体验邮件的发送接收"><span class="nav-number">1.</span> <span class="nav-text">案例一、在自己本机上搭邮件服务器体验邮件的发送接收</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#预备条件："><span class="nav-number">1.1.</span> <span class="nav-text">预备条件：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#易邮邮件服务器是把自己本机作为邮件服务器，可以在本机上创建邮箱（自定义的邮箱，反正是服务器是你的电脑），切记本案例中易邮邮件服务器不能关闭，否则就和云服务器关闭了那样一个道理，用它创建的邮箱就不能用了。"><span class="nav-number">1.1.1.</span> <span class="nav-text">易邮邮件服务器是把自己本机作为邮件服务器，可以在本机上创建邮箱（自定义的邮箱，反正是服务器是你的电脑），切记本案例中易邮邮件服务器不能关闭，否则就和云服务器关闭了那样一个道理，用它创建的邮箱就不能用了。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Foxmail里面可以添加邮箱，属于本机的邮箱（如易邮邮件服务器创建的邮箱，本机有效，填写的服务器为localhost），和网上你申请的邮箱（如QQ邮箱、网易邮箱、Gmail邮箱等）均可，在此要注意QQ邮箱需要在网页打开邮箱-gt-设置-gt-账户-gt-开启服务（在中间靠下的位置）打开POP3-SMTP服务和IMAP-SMTP服务，若没打开后面第二个案例就会连不上了。"><span class="nav-number">1.1.2.</span> <span class="nav-text">Foxmail里面可以添加邮箱，属于本机的邮箱（如易邮邮件服务器创建的邮箱，本机有效，填写的服务器为localhost），和网上你申请的邮箱（如QQ邮箱、网易邮箱、Gmail邮箱等）均可，在此要注意QQ邮箱需要在网页打开邮箱-&gt;设置-&gt;账户-&gt;开启服务（在中间靠下的位置）打开POP3/SMTP服务和IMAP/SMTP服务，若没打开后面第二个案例就会连不上了。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一定要在Foxmail中将在易邮邮件服务器中创建的邮箱添加进去，用于查看接收邮件"><span class="nav-number">1.1.3.</span> <span class="nav-text">一定要在Foxmail中将在易邮邮件服务器中创建的邮箱添加进去，用于查看接收邮件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终于开始撸本机邮件练习的代码部分了："><span class="nav-number">1.2.</span> <span class="nav-text">终于开始撸本机邮件练习的代码部分了：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例二、使用自己在网上申请的邮箱来通过代码发邮件"><span class="nav-number">2.</span> <span class="nav-text">案例二、使用自己在网上申请的邮箱来通过代码发邮件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#预备条件：准备至少两个邮箱（否则只能单个邮箱自己发给自己了）"><span class="nav-number">2.1.</span> <span class="nav-text">预备条件：准备至少两个邮箱（否则只能单个邮箱自己发给自己了）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">生活不仅仅只有代码，还有诗与远方...</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">2.1k</span>
+  
+</div>
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  |
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.1k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytpLd6OP';
+      var conf = 'aabaed7d4c36a7ce477c04154ff2d8dc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <!-- 添加点击爆炸效果 -->
+  
+  <!-- 添加页面小宠物 -->
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    var trElement = document.getElementById('hexo-helper-live2d');
+    trElement.parentNode.removeChild(trElement);
+    return;
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/nipsilon.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
