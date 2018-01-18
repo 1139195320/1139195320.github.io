@@ -4,8 +4,54 @@
 
     
   <url>
+    <loc>http://github.ymlsfly.xin/2018/01/18/%E5%89%91%E6%8C%87jdbc/</loc>
+    <lastmod>2018-01-18T13:17:25.071Z</lastmod>
+    <data>
+        <display>
+        <title>剑指jdbc</title>
+        <pubTime>2018-01-18T12:52:42.000Z</pubTime>
+        
+        <tag>jdbc</tag>
+         
+        <tag>数据库</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://github.ymlsfly.xin/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/18/%E6%8B%A5%E6%9C%89%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%A4%9A%E4%B8%AATomcat/</loc>
+    <lastmod>2018-01-18T12:46:39.503Z</lastmod>
+    <data>
+        <display>
+        <title>拥有并启动多个Tomcat</title>
+        <pubTime>2018-01-18T12:07:37.000Z</pubTime>
+        
+        <tag>server</tag>
+         
+        <tag>工具</tag>
+         
+        <tag>tomcat</tag>
+         
+         
+           
+             
+              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://github.ymlsfly.xin/2018/01/18/mantis%E7%9A%84%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-01-18T05:02:08.404Z</lastmod>
+    <lastmod>2018-01-18T12:14:06.836Z</lastmod>
     <data>
         <display>
         <title>mantis的学习</title>
@@ -20,13 +66,27 @@
          
            
              
-              <breadCrumb title="安装配置" url="http://github.ymlsfly.xin/categories/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/17/Maven%E5%88%9D%E5%8D%B0%E8%B1%A1/</loc>
+    <lastmod>2018-01-18T12:13:49.542Z</lastmod>
+    <data>
+        <display>
+        <title>Maven初印象</title>
+        <pubTime>2018-01-17T11:13:30.000Z</pubTime>
+        
+        <tag>maven</tag>
+         
+         
+           
              
-              <breadCrumb title="测试" url="http://github.ymlsfly.xin/categories/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/%E6%B5%8B%E8%AF%95/"/>
-          
-             
-              <breadCrumb title="工具" url="http://github.ymlsfly.xin/categories/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="maven" url="http://github.ymlsfly.xin/categories/maven/"/>
           
         </display>
     </data>
@@ -35,7 +95,7 @@
     
   <url>
     <loc>http://github.ymlsfly.xin/2018/01/18/testlink%E7%9A%84%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-01-18T01:37:50.952Z</lastmod>
+    <lastmod>2018-01-18T12:13:34.194Z</lastmod>
     <data>
         <display>
         <title>testlink的学习</title>
@@ -50,14 +110,45 @@
          
            
              
-              <breadCrumb title="测试" url="http://github.ymlsfly.xin/categories/%E6%B5%8B%E8%AF%95/"/>
+              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/17/XAMPP%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2018-01-18T12:12:58.757Z</lastmod>
+    <data>
+        <display>
+        <title>XAMPP安装</title>
+        <pubTime>2018-01-17T06:15:43.000Z</pubTime>
+        
+        <tag>xampp</tag>
+         
+        <tag>server</tag>
+         
+         
+           
              
-              <breadCrumb title="工具" url="http://github.ymlsfly.xin/categories/%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
           
-             
-              <breadCrumb title="安装配置" url="http://github.ymlsfly.xin/categories/%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
-          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/13/TestStudy/</loc>
+    <lastmod>2018-01-18T12:12:30.768Z</lastmod>
+    <data>
+        <display>
+        <title>TestStudy</title>
+        <pubTime>2018-01-13T07:31:55.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
@@ -84,53 +175,6 @@
 
     
   <url>
-    <loc>http://github.ymlsfly.xin/2018/01/17/Maven%E5%88%9D%E5%8D%B0%E8%B1%A1/</loc>
-    <lastmod>2018-01-17T12:33:30.418Z</lastmod>
-    <data>
-        <display>
-        <title>Maven初印象</title>
-        <pubTime>2018-01-17T11:13:30.000Z</pubTime>
-        
-        <tag>maven</tag>
-         
-         
-           
-             
-              <breadCrumb title="maven" url="http://github.ymlsfly.xin/categories/maven/"/>
-          
-             
-              <breadCrumb title="理论" url="http://github.ymlsfly.xin/categories/maven/%E7%90%86%E8%AE%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://github.ymlsfly.xin/2018/01/17/XAMPP%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2018-01-17T07:51:14.980Z</lastmod>
-    <data>
-        <display>
-        <title>XAMPP安装</title>
-        <pubTime>2018-01-17T06:15:43.000Z</pubTime>
-        
-        <tag>xampp</tag>
-         
-        <tag>Windows安装软件</tag>
-         
-        <tag>server</tag>
-         
-         
-           
-             
-              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://github.ymlsfly.xin/2018/01/16/%E7%94%A8Java%E6%9D%A5%E5%8F%91%E9%82%AE%E4%BB%B6/</loc>
     <lastmod>2018-01-16T15:04:33.192Z</lastmod>
     <data>
@@ -146,28 +190,6 @@
            
              
               <breadCrumb title="java" url="http://github.ymlsfly.xin/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://github.ymlsfly.xin/2018/01/13/TestStudy/</loc>
-    <lastmod>2018-01-14T13:25:56.440Z</lastmod>
-    <data>
-        <display>
-        <title>TestStudy</title>
-        <pubTime>2018-01-13T07:31:55.000Z</pubTime>
-        
-        <tag>学习</tag>
-         
-        <tag>入门</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习" url="http://github.ymlsfly.xin/categories/%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
