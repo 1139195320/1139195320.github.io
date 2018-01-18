@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://github.ymlsfly.xin/"/>
-  <updated>2018-01-17T13:26:38.526Z</updated>
+  <updated>2018-01-18T01:37:50.952Z</updated>
   <id>http://github.ymlsfly.xin/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>testlink的学习</title>
+    <link href="http://github.ymlsfly.xin/2018/01/18/testlink%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://github.ymlsfly.xin/2018/01/18/testlink的学习/</id>
+    <published>2018-01-18T01:02:06.000Z</published>
+    <updated>2018-01-18T01:37:50.952Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>TestLink</p></blockquote><p>是基于web的测试用例管理系统，主要功能是测试用例的创建、管理和执行，并且还提供了一些简单的统计功能。</p><p>testlink这类工具一般都用于在服务器端，所以博主偏重讲下linux下的testlink的安装配置。</p><h2 id="Windows-xampp安装配置testlink"><a href="#Windows-xampp安装配置testlink" class="headerlink" title="Windows+xampp安装配置testlink"></a>Windows+xampp安装配置testlink</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol><li>从网上下载testlink的压缩包，将安装包解压，放到xampp的htdocs目录下，改名为testlink。</li><li><p>启动Apache，浏览器打开testlink，点击New installation，选择协议，点击下一步：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://ip/testlink</span><br></pre></td></tr></table></figure></li><li><p>continue然后配置mysql，安装成功，登录testlink，默认用户名/密码为admin/admin</p></li></ol><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>中间配置可能会有警告，对其安装并没有影响，如果有需要可以修改篇配置来消掉警告。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Maximun Session Idle Time before Timeout ：shot.consider to extend</span><br><span class="line">//配置文件中找到对应值调大</span><br><span class="line">Checking max.execution time(Parameter max_execution_time) 30 seconds –we suggest 120 seconds in order to manage hundred of test cases</span><br><span class="line">//配置文件中找到对应值调大</span><br><span class="line">Checking maximal allowed memory (Parameter memory_limit) </span><br><span class="line">//配置文件中找到对应值调大</span><br></pre></td></tr></table></figure></p><h2 id="linux-Apache安装配置testlink"><a href="#linux-Apache安装配置testlink" class="headerlink" title="linux+Apache安装配置testlink"></a>linux+Apache安装配置testlink</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ol><li><p>在服务器上直接下载testlink压缩包，或在Windows上通过远程工具将下载好的testlink压缩包传到服务器。也可以在服务器上直接通过wget命令下载。</p></li><li><p>解压，然后将其移至Apache工作目录/var/www/html/文件夹下，重命名为testlink：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf testlink-1.9.14.tar.gz</span><br><span class="line">mv testlink-1.9.14 /var/www/html/testlink</span><br></pre></td></tr></table></figure></li><li><p>在浏览器打开<a href="http://ip/testlink" target="_blank" rel="noopener">http://ip/testlink</a><br><img src="https://raw.githubusercontent.com/1139195320/imgs/8b908968111c3b8292200570a420089d0185eef3/testlink/1.png" alt=""><br><img src="https://raw.githubusercontent.com/1139195320/imgs/8b908968111c3b8292200570a420089d0185eef3/testlink/2.png" alt=""></p></li><li>警告和错误信息处理：（操作后都必须要重启Apache）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">警告信息：</span><br><span class="line">Maximum Session Idle Time before Timeout</span><br><span class="line">24 minutes and 0 seconds - (Short. Consider to exten</span><br><span class="line">d.)</span><br><span class="line">解决：修改php.ini文件</span><br><span class="line">session.gc_maxlifetime = 3600</span><br><span class="line"></span><br><span class="line">警告信息：</span><br><span class="line">Checking max. execution time (Parameter max_execution_time)</span><br><span class="line">30 seconds - We suggest 120 seconds in order to manage hundred of test cases (edit php.ini)</span><br><span class="line">解决：</span><br><span class="line">修改php.ini文件</span><br><span class="line">max_execution_time = 12Checking LDAP libraryFailed! LDAP library not enabled. LDAP authentication cannot be used. (default internal authentication will works)</span><br><span class="line"></span><br><span class="line">警告信息：Checking if /var/testlink/logs/ directory exists [S]</span><br><span class="line">Failed!</span><br><span class="line">Checking if /var/testlink/upload_area/ directory exists [S]</span><br><span class="line">解决：</span><br><span class="line">修改/testlink/config_inc.php文件</span><br><span class="line">log_path = &apos;/var/www/html/testlink/logs/&apos;;</span><br><span class="line">$g_repositoryPath = &apos;/var/www/html/testlink/upload_area/&apos;;</span><br><span class="line">然后检查/var/www/html/testlink/下是否有logs文件夹和upload_area文件夹，没有则创建。</span><br><span class="line">检查这两个文件夹的权限，均赋权777</span><br><span class="line">chmod 777 logs/</span><br><span class="line">chmod 777 upload_area/</span><br></pre></td></tr></table></figure></li></ol><p><img src="https://raw.githubusercontent.com/1139195320/imgs/8b908968111c3b8292200570a420089d0185eef3/testlink/3.png" alt=""></p><ol><li>在浏览器中直接输入地址访问登录：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://ip/testlink/</span><br></pre></td></tr></table></figure></li></ol><p>默认登录账号/密码为：admin/admin</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p><img src="https://raw.githubusercontent.com/1139195320/imgs/8b908968111c3b8292200570a420089d0185eef3/testlink/4.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">警告信息：</span><br><span class="line">There are security warnings for your consideration. See details on file: C:/xampp/htdocs/testlink/logs/config_check.txt. To disable any reference to these checkings, set $tlCfg-&gt;config_check_warning_mode = &apos;SILENT&apos;;</span><br><span class="line">解决：</span><br><span class="line">vim /var/www/html/testlink/config.inc.php</span><br><span class="line">将$tlCfg-&gt;config_check_warning_mode = &apos;FILE&apos;;修改为：</span><br><span class="line">$tlCfg-&gt;config_check_warning_mode = &apos;SILENT&apos;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;TestLink&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;是基于web的测试用例管理系统，主要功能是测试用例的创建、管理和执行，并且还提供了一些简单的统计功能。&lt;/p&gt;
+&lt;p&gt;testlink这类
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="http://github.ymlsfly.xin/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="工具" scheme="http://github.ymlsfly.xin/categories/%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="安装配置" scheme="http://github.ymlsfly.xin/categories/%E6%B5%8B%E8%AF%95/%E5%B7%A5%E5%85%B7/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="testlink" scheme="http://github.ymlsfly.xin/tags/testlink/"/>
+    
+      <category term="测试" scheme="http://github.ymlsfly.xin/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker梦工厂</title>
