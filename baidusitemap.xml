@@ -4,8 +4,52 @@
 
     
   <url>
+    <loc>http://github.ymlsfly.xin/2018/01/19/%E5%AF%8C%E6%96%87%E6%9C%ACwangEditor/</loc>
+    <lastmod>2018-01-19T16:00:44.698Z</lastmod>
+    <data>
+        <display>
+        <title>富文本wangEditor</title>
+        <pubTime>2018-01-19T15:49:08.000Z</pubTime>
+        
+        <tag>富文本</tag>
+         
+        <tag>wangEditor</tag>
+         
+         
+           
+             
+              <breadCrumb title="富文本编辑器" url="http://github.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/19/%E5%AF%8C%E6%96%87%E6%9C%ACsummernote/</loc>
+    <lastmod>2018-01-19T15:51:06.576Z</lastmod>
+    <data>
+        <display>
+        <title>富文本summernote</title>
+        <pubTime>2018-01-19T04:49:57.000Z</pubTime>
+        
+        <tag>富文本</tag>
+         
+        <tag>summernote</tag>
+         
+         
+           
+             
+              <breadCrumb title="富文本编辑器" url="http://github.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://github.ymlsfly.xin/2018/01/18/%E5%89%91%E6%8C%87jdbc/</loc>
-    <lastmod>2018-01-18T13:27:23.548Z</lastmod>
+    <lastmod>2018-01-18T13:31:37.692Z</lastmod>
     <data>
         <display>
         <title>剑指jdbc</title>
@@ -57,11 +101,11 @@
         <title>mantis的学习</title>
         <pubTime>2018-01-18T04:38:57.000Z</pubTime>
         
-        <tag>mantis</tag>
-         
         <tag>测试</tag>
          
         <tag>工具</tag>
+         
+        <tag>mantis</tag>
          
          
            
@@ -101,11 +145,11 @@
         <title>testlink的学习</title>
         <pubTime>2018-01-18T01:02:06.000Z</pubTime>
         
+        <tag>testlink</tag>
+         
         <tag>测试</tag>
          
         <tag>工具</tag>
-         
-        <tag>testlink</tag>
          
          
            
