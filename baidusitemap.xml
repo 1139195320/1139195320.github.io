@@ -4,6 +4,96 @@
 
     
   <url>
+    <loc>http://github.ymlsfly.xin/2018/01/20/linux%E4%B8%8A%E7%9A%84tomcat/</loc>
+    <lastmod>2018-01-20T07:03:29.210Z</lastmod>
+    <data>
+        <display>
+        <title>linux上的tomcat</title>
+        <pubTime>2018-01-20T05:28:17.000Z</pubTime>
+        
+        <tag>tomcat</tag>
+         
+        <tag>linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/20/linux%E9%85%8D%E7%BD%AEjdk/</loc>
+    <lastmod>2018-01-20T06:10:14.763Z</lastmod>
+    <data>
+        <display>
+        <title>linux配置jdk</title>
+        <pubTime>2018-01-20T05:27:40.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>jdk</tag>
+         
+         
+           
+             
+              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/20/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-01-20T05:24:13.355Z</lastmod>
+    <data>
+        <display>
+        <title>Java设计模式之单例模式</title>
+        <pubTime>2018-01-20T05:10:30.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>单例</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java设计模式" url="http://github.ymlsfly.xin/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/01/18/%E6%8B%A5%E6%9C%89%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%A4%9A%E4%B8%AATomcat/</loc>
+    <lastmod>2018-01-19T16:13:45.896Z</lastmod>
+    <data>
+        <display>
+        <title>拥有并启动多个Tomcat</title>
+        <pubTime>2018-01-18T12:07:37.000Z</pubTime>
+        
+        <tag>server</tag>
+         
+        <tag>工具</tag>
+         
+        <tag>tomcat</tag>
+         
+         
+           
+             
+              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://github.ymlsfly.xin/2018/01/19/%E5%AF%8C%E6%96%87%E6%9C%ACwangEditor/</loc>
     <lastmod>2018-01-19T16:00:44.698Z</lastmod>
     <data>
@@ -70,30 +160,6 @@
 
     
   <url>
-    <loc>http://github.ymlsfly.xin/2018/01/18/%E6%8B%A5%E6%9C%89%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%A4%9A%E4%B8%AATomcat/</loc>
-    <lastmod>2018-01-18T12:46:39.503Z</lastmod>
-    <data>
-        <display>
-        <title>拥有并启动多个Tomcat</title>
-        <pubTime>2018-01-18T12:07:37.000Z</pubTime>
-        
-        <tag>server</tag>
-         
-        <tag>工具</tag>
-         
-        <tag>tomcat</tag>
-         
-         
-           
-             
-              <breadCrumb title="软件安装" url="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://github.ymlsfly.xin/2018/01/18/mantis%E7%9A%84%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2018-01-18T12:14:06.836Z</lastmod>
     <data>
@@ -101,11 +167,11 @@
         <title>mantis的学习</title>
         <pubTime>2018-01-18T04:38:57.000Z</pubTime>
         
+        <tag>mantis</tag>
+         
         <tag>测试</tag>
          
         <tag>工具</tag>
-         
-        <tag>mantis</tag>
          
          
            
@@ -145,11 +211,11 @@
         <title>testlink的学习</title>
         <pubTime>2018-01-18T01:02:06.000Z</pubTime>
         
-        <tag>testlink</tag>
-         
         <tag>测试</tag>
          
         <tag>工具</tag>
+         
+        <tag>testlink</tag>
          
          
            
