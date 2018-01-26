@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="羊末离殇的独立博客">
 <meta property="og:description" content="前言大家都知道我们在本地机器上安装配置tomcat，可能只是为了开发测试，而真正的用tomcat，是在服务器上，从安全性考虑，服务器一般都是linux，所以我们就要会在linux服务器上安装配置tomcat。 准备工作这里有个前提条件，就是服务器已经配置了jdk，且环境变量也配置无误，没有安装配置jdk的可以参考博主前面的一篇在linux上配置jdk的文章。这里和安装jdk一样，博主还是将tomc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-20T07:03:29.210Z">
+<meta property="og:updated_time" content="2018-01-23T00:42:14.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux上的tomcat">
 <meta name="twitter:description" content="前言大家都知道我们在本地机器上安装配置tomcat，可能只是为了开发测试，而真正的用tomcat，是在服务器上，从安全性考虑，服务器一般都是linux，所以我们就要会在linux服务器上安装配置tomcat。 准备工作这里有个前提条件，就是服务器已经配置了jdk，且环境变量也配置无误，没有安装配置jdk的可以参考博主前面的一篇在linux上配置jdk的文章。这里和安装jdk一样，博主还是将tomc">
@@ -459,7 +459,7 @@
 <h2 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h2><p>针对如果开启了防火墙的服务器，需要打开tomcat的监听端口,让外部能访问tomcat，这里仍是使用tomcat的默认监听端口8080.</p>
 <ol>
 <li><p>if firewall</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br><span class="line">service firewalld restar</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br><span class="line">service firewalld restart</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>if iptables</p>
 </li>
