@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://github.ymlsfly.xin/2018/01/29/zTree%E7%9A%84%E8%AF%95%E7%82%BC/</loc>
+    <lastmod>2018-01-29T11:04:52.745Z</lastmod>
+    <data>
+        <display>
+        <title>zTree的试炼</title>
+        <pubTime>2018-01-29T09:29:09.000Z</pubTime>
+        
+        <tag>zTree</tag>
+         
+         
+           
+             
+              <breadCrumb title="JQuery插件" url="http://github.ymlsfly.xin/categories/JQuery%E6%8F%92%E4%BB%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://github.ymlsfly.xin/2018/01/29/%E9%AB%98%E4%BA%AE%E4%BB%A3%E7%A0%81%E7%9A%84%E9%9B%86%E7%BB%93/</loc>
     <lastmod>2018-01-29T05:58:33.735Z</lastmod>
     <data>
@@ -185,9 +205,9 @@
         
         <tag>server</tag>
          
-        <tag>tomcat</tag>
-         
         <tag>工具</tag>
+         
+        <tag>tomcat</tag>
          
          
            

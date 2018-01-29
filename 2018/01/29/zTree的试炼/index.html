@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16×16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32×32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="zTree," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="羊末离殇的独立博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前言jQuery的插件特别多，前几天博主盯上了zTree，这个有名的jquery树插件，然后通过网上一些别人的资料，以及官方的API，将zTree稍过了下，今天就将其分享出来！ 功能介绍 初始化zTree zTree的配置 添加/删除/获取/修改节点 全选/反选节点 节点上移下移 节点右键菜单  贴代码123456789101112131415161718192021222324252627282">
+<meta name="keywords" content="zTree">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zTree的试炼">
+<meta property="og:url" content="http://github.ymlsfly.xin/2018/01/29/zTree的试炼/index.html">
+<meta property="og:site_name" content="羊末离殇的独立博客">
+<meta property="og:description" content="前言jQuery的插件特别多，前几天博主盯上了zTree，这个有名的jquery树插件，然后通过网上一些别人的资料，以及官方的API，将zTree稍过了下，今天就将其分享出来！ 功能介绍 初始化zTree zTree的配置 添加/删除/获取/修改节点 全选/反选节点 节点上移下移 节点右键菜单  贴代码123456789101112131415161718192021222324252627282">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-29T11:04:52.745Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="zTree的试炼">
+<meta name="twitter:description" content="前言jQuery的插件特别多，前几天博主盯上了zTree，这个有名的jquery树插件，然后通过网上一些别人的资料，以及官方的API，将zTree稍过了下，今天就将其分享出来！ 功能介绍 初始化zTree zTree的配置 添加/删除/获取/修改节点 全选/反选节点 节点上移下移 节点右键菜单  贴代码123456789101112131415161718192021222324252627282">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '5HXMI8QJO0',
+      apiKey: '5f2ef4698fa0b13503ac75567b2e948b',
+      indexName: 'github_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与${query}相关的内容","hits_stats":"找到${hits}条相关记录，耗时${time}毫秒"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>zTree的试炼 | 羊末离殇的独立博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/1139195320"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">羊末离殇的独立博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">与代码的持久博弈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+  
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.ymlsfly.xin/2018/01/29/zTree的试炼/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="羊末离殇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="羊末离殇的独立博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">zTree的试炼</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T17:29:09+08:00">
+                2018-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JQuery插件/" itemprop="url" rel="index">
+                    <span itemprop="name">JQuery插件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/01/29/zTree的试炼/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/01/29/zTree的试炼/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,772
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>jQuery的插件特别多，前几天博主盯上了zTree，这个有名的jquery树插件，然后通过网上一些别人的资料，以及官方的API，将zTree稍过了下，今天就将其分享出来！</p>
+<h2 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h2><ol>
+<li>初始化zTree</li>
+<li>zTree的配置</li>
+<li>添加/删除/获取/修改节点</li>
+<li>全选/反选节点</li>
+<li>节点上移下移</li>
+<li>节点右键菜单</li>
+</ol>
+<h2 id="贴代码"><a href="#贴代码" class="headerlink" title="贴代码"></a>贴代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span> zTreeDemo <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/demo.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/zTreeStyle.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			#rMenuUl&#123;</span></span><br><span class="line"><span class="undefined">				border: 1px dashed #617775;</span></span><br><span class="line"><span class="undefined">				display: none;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			#rMenuUl li&#123;</span></span><br><span class="line"><span class="undefined">				list-style: none;</span></span><br><span class="line"><span class="undefined">				text-align: center;</span></span><br><span class="line"><span class="undefined">				width: 100px;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			#rMenuUl li:hover&#123;</span></span><br><span class="line"><span class="undefined">				background-color: #617775;</span></span><br><span class="line"><span class="undefined">				color: white;</span></span><br><span class="line"><span class="undefined">				cursor: pointer;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>	</span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.ztree.all.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			var zTreeObj;</span></span><br><span class="line"><span class="undefined">			var nowRightClickNode = null;</span></span><br><span class="line"><span class="undefined">			// zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）</span></span><br><span class="line"><span class="undefined">			var setting = &#123;</span></span><br><span class="line"><span class="undefined">				treeId: "",</span></span><br><span class="line"><span class="undefined">				treeObj: null,</span></span><br><span class="line"><span class="undefined">				view: &#123;</span></span><br><span class="line"><span class="undefined">					selectedMulti: true, //设置是否能够同时选中多个节点</span></span><br><span class="line"><span class="undefined">					showIcon: true, //设置是否显示节点图标</span></span><br><span class="line"><span class="undefined">					showLine: true, //设置是否显示节点与节点之间的连线</span></span><br><span class="line"><span class="undefined">					showTitle: true, //设置是否显示节点的title提示信息</span></span><br><span class="line"><span class="undefined">				&#125;,</span></span><br><span class="line"><span class="undefined">				data: &#123;</span></span><br><span class="line"><span class="undefined">					simpleData: &#123;</span></span><br><span class="line"><span class="undefined">						enable: false, //设置是否启用简单数据格式（zTree支持标准数据格式跟简单数据格式）</span></span><br><span class="line"><span class="undefined">						idKey: "id", //设置启用简单数据格式时id对应的属性名称</span></span><br><span class="line"><span class="undefined">						pidKey: "pId" //设置启用简单数据格式时parentId对应的属性名称,ztree根据id及pid层级关系构建树结构</span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">				&#125;,</span></span><br><span class="line"><span class="undefined">				check: &#123;</span></span><br><span class="line"><span class="undefined">					enable: true //设置是否显示checkbox复选框</span></span><br><span class="line"><span class="undefined">				&#125;,</span></span><br><span class="line"><span class="undefined">				callback: &#123;</span></span><br><span class="line"><span class="undefined">					/*定义节点单击事件回调函数*/</span></span><br><span class="line"><span class="undefined">					onClick: onClick,</span></span><br><span class="line"><span class="undefined">					/*定义节点右键单击事件回调函数*/</span></span><br><span class="line"><span class="undefined">					onRightClick: OnRightClick,</span></span><br><span class="line"><span class="undefined">					/*定义节点重新编辑成功前回调函数，一般用于节点编辑时判断输入的节点名称是否合法*/</span></span><br><span class="line"><span class="undefined">					beforeRename: beforeRename,</span></span><br><span class="line"><span class="undefined">					/*定义节点双击事件回调函数*/</span></span><br><span class="line"><span class="undefined">					onDblClick: "onDblClick",</span></span><br><span class="line"><span class="undefined">					/*定义节点复选框选中或取消选中事件的回调函数*/</span></span><br><span class="line"><span class="undefined">					onCheck: onCheck</span></span><br><span class="line"><span class="undefined">				&#125;,</span></span><br><span class="line"><span class="undefined">				async: &#123;</span></span><br><span class="line"><span class="undefined">					/*设置启用异步加载*/</span></span><br><span class="line"><span class="undefined">					enable: true,</span></span><br><span class="line"><span class="undefined">					/*异步加载类型:post和get*/</span></span><br><span class="line"><span class="undefined">					type: "get",</span></span><br><span class="line"><span class="undefined">					/*定义ajax提交参数的参数类型，一般为json格式*/</span></span><br><span class="line"><span class="undefined">					contentType: "application/json",</span></span><br><span class="line"><span class="undefined">					/*定义数据请求路径*/</span></span><br><span class="line"><span class="undefined">					url: "/Design/Get",</span></span><br><span class="line"><span class="undefined">					/*定义提交时参数的名称，=号前面标识节点属性，后面标识提交时json数据中参数的名称*/</span></span><br><span class="line"><span class="undefined">					autoParam: ["id=id", "name=name"]</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined">			/*节点数据*/</span></span><br><span class="line"><span class="undefined">			var zNodes = [&#123;</span></span><br><span class="line"><span class="undefined">					name: "test1",</span></span><br><span class="line"><span class="undefined">					open: true,</span></span><br><span class="line"><span class="undefined">					children: [&#123;</span></span><br><span class="line"><span class="undefined">						name: "test1_1"</span></span><br><span class="line"><span class="undefined">					&#125;, &#123;</span></span><br><span class="line"><span class="undefined">						name: "test1_2"</span></span><br><span class="line"><span class="undefined">					&#125;]</span></span><br><span class="line"><span class="undefined">				&#125;,&#123;</span></span><br><span class="line"><span class="undefined">					name: "test2",</span></span><br><span class="line"><span class="undefined">					open: true,</span></span><br><span class="line"><span class="undefined">					children: [&#123;</span></span><br><span class="line"><span class="undefined">						name: "test2_1"</span></span><br><span class="line"><span class="undefined">					&#125;, &#123;</span></span><br><span class="line"><span class="undefined">						name: "test2_2"</span></span><br><span class="line"><span class="undefined">					&#125;]</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			];</span></span><br><span class="line"><span class="undefined">			$(document).ready(function() &#123;</span></span><br><span class="line"><span class="undefined">				/*初始化时会返回该树*/</span></span><br><span class="line"><span class="undefined">				var zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);</span></span><br><span class="line"><span class="undefined">				/*获取所有选中的节点*/</span></span><br><span class="line"><span class="undefined">				$("#getCheckedNodes").click(function()&#123;</span></span><br><span class="line"><span class="undefined">					var nodes = zTreeObj.getCheckedNodes();</span></span><br><span class="line"><span class="undefined">					var str = "选中的节点数：" + nodes.length;</span></span><br><span class="line"><span class="undefined">					$.each(nodes, function(index,n) &#123;</span></span><br><span class="line"><span class="undefined">						str += "\n" + n.name ;</span></span><br><span class="line"><span class="undefined">					&#125;);</span></span><br><span class="line"><span class="undefined">					alert(str);</span></span><br><span class="line"><span class="undefined">				&#125;);</span></span><br><span class="line"><span class="undefined">				/*添加节点*/</span></span><br><span class="line"><span class="undefined">				$("#addNode").click(function() &#123;</span></span><br><span class="line"><span class="undefined">					/*获取到该树*/</span></span><br><span class="line"><span class="undefined">					var tree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">					/*</span></span><br><span class="line"><span class="undefined">					 *  parentNode:指定的父节点，如果增加根节点，请设置 parentNode 为 null 即可</span></span><br><span class="line"><span class="undefined">						index:新节点插入的位置（从 0 开始），index = -1 时，插入到最后，此参数可忽略</span></span><br><span class="line"><span class="undefined">						newNodes：需要增加的节点数据 JSON 对象集合，数据只需要满足 zTree 的节点数据必需的属性即可 </span></span><br><span class="line"><span class="undefined">						isSilent：true 时，添加节点后不展开父节点，其他值或缺省状态都自动展开</span></span><br><span class="line"><span class="undefined">					 * </span></span><br><span class="line"><span class="undefined">					 * */</span></span><br><span class="line"><span class="undefined">					tree.addNodes(null, 2, [&#123;</span></span><br><span class="line"><span class="undefined">						name:"hello",</span></span><br><span class="line"><span class="undefined">						open : true ,</span></span><br><span class="line"><span class="undefined">						children : [</span></span><br><span class="line"><span class="undefined">							&#123;name:"hello1"&#125; , &#123;name:"hello2"&#125;</span></span><br><span class="line"><span class="undefined">					]&#125;], false);</span></span><br><span class="line"><span class="undefined">				&#125;);</span></span><br><span class="line"><span class="undefined">				/*全选所有节点*/</span></span><br><span class="line"><span class="undefined">				$("#checkAll").click(function()&#123;</span></span><br><span class="line"><span class="undefined">					var tree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">					/*checked参数为true时全部勾选，为false时全部取消勾选。*/</span></span><br><span class="line"><span class="undefined">					tree.checkAllNodes(true);</span></span><br><span class="line"><span class="undefined">				&#125;);</span></span><br><span class="line"><span class="undefined">				/*反选所有节点*/</span></span><br><span class="line"><span class="undefined">				$("#checkAllNo").click(function()&#123;</span></span><br><span class="line"><span class="undefined">					var tree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">					var nodes = tree.getNodes();</span></span><br><span class="line"><span class="undefined">					$.each(nodes, function(index,n) &#123;</span></span><br><span class="line"><span class="undefined">						/*</span></span><br><span class="line"><span class="undefined">						 * check_Child_State子节点勾选状态</span></span><br><span class="line"><span class="undefined">						 * -1	不存在子节点 或 子节点全部设置为 nocheck = true</span></span><br><span class="line"><span class="undefined">							0	无 子节点被勾选</span></span><br><span class="line"><span class="undefined">							1	部分 子节点被勾选</span></span><br><span class="line"><span class="undefined">							2	全部 子节点被勾选</span></span><br><span class="line"><span class="undefined">						 * */</span></span><br><span class="line"><span class="undefined">						if(n.check_Child_State == 0)&#123;</span></span><br><span class="line"><span class="undefined">							checkXNode(tree , n);</span></span><br><span class="line"><span class="undefined">						&#125;else&#123;</span></span><br><span class="line"><span class="undefined">							checkCNode(tree , n);</span></span><br><span class="line"><span class="undefined">						&#125;</span></span><br><span class="line"><span class="undefined">					&#125;);</span></span><br><span class="line"><span class="undefined">				&#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*通过递归来反选某节点*/</span></span><br><span class="line"><span class="undefined">			function checkCNode(tree , node)&#123;</span></span><br><span class="line"><span class="undefined">				if(node.children != null)&#123;</span></span><br><span class="line"><span class="undefined">					if(node.check_Child_State == 2)&#123;</span></span><br><span class="line"><span class="undefined">						/*原来的子节点全被选中*/</span></span><br><span class="line"><span class="undefined">						tree.checkNode(node,false);</span></span><br><span class="line"><span class="undefined">						$.each(node.children, function(index , n) &#123;</span></span><br><span class="line"><span class="undefined">							checkCNode(tree,n);</span></span><br><span class="line"><span class="undefined">						&#125;);</span></span><br><span class="line"><span class="undefined">					&#125;else&#123;</span></span><br><span class="line"><span class="undefined">						$.each(node.children, function(index , n) &#123;</span></span><br><span class="line"><span class="undefined">							if(n.checked)&#123;</span></span><br><span class="line"><span class="undefined">								checkCNode(tree , n);</span></span><br><span class="line"><span class="undefined">							&#125;else&#123;</span></span><br><span class="line"><span class="undefined">								checkXNode(tree,n);</span></span><br><span class="line"><span class="undefined">							&#125;</span></span><br><span class="line"><span class="undefined">						&#125;);</span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">				&#125;else&#123;</span></span><br><span class="line"><span class="undefined">					/*node无子节点*/</span></span><br><span class="line"><span class="undefined">					tree.checkNode(node,false); </span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*通过递归来选择某节点*/</span></span><br><span class="line"><span class="undefined">			function checkXNode(tree,node)&#123;</span></span><br><span class="line"><span class="undefined">				tree.checkNode(node);</span></span><br><span class="line"><span class="undefined">				if(node.children != null)&#123;</span></span><br><span class="line"><span class="undefined">					$.each(node.children, function(index , n) &#123;</span></span><br><span class="line"><span class="undefined">						checkXNode(tree , n);</span></span><br><span class="line"><span class="undefined">					&#125;);</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*通过递归将某节点置为未选*/</span></span><br><span class="line"><span class="undefined">			function checkNNode(tree , node)&#123;</span></span><br><span class="line"><span class="undefined">				tree.checkNode(node,false); </span></span><br><span class="line"><span class="undefined">				if(node.children)&#123;</span></span><br><span class="line"><span class="undefined">					$.each(node.children, function(index , n) &#123;</span></span><br><span class="line"><span class="undefined">						checkNNode(tree , n);</span></span><br><span class="line"><span class="undefined">					&#125;);</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*节点单击事件*/</span></span><br><span class="line"><span class="undefined">			function onClick(e, treeId, treeNode) &#123;</span></span><br><span class="line"><span class="undefined">				/*如果不是叶子结点，结束*/</span></span><br><span class="line"><span class="undefined">				if(treeNode.isParent)</span></span><br><span class="line"><span class="undefined">					return;</span></span><br><span class="line"><span class="undefined">				/*获取当前结点上的相关属性数据，执行相关逻辑*/</span></span><br><span class="line"><span class="undefined">				alert(treeNode.name);</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined">			/*节点复选框事件*/</span></span><br><span class="line"><span class="undefined">			function onCheck() &#123;</span></span><br><span class="line"><span class="undefined">				/*获取树对象*/</span></span><br><span class="line"><span class="undefined">				var treeObj = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				/*获取勾选状态改变的节点*/</span></span><br><span class="line"><span class="undefined">				var nodes = treeObj.getChangeCheckedNodes();</span></span><br><span class="line"><span class="undefined">				var designIds = [];</span></span><br><span class="line"><span class="undefined">				/*定义初始勾选状态为未勾选*/</span></span><br><span class="line"><span class="undefined">				var status = 0;</span></span><br><span class="line"><span class="undefined">				if(nodes[0].checked)</span></span><br><span class="line"><span class="undefined">					/*如果状态改变节点为勾选状态，说明当前操作是从未勾选变为已勾选。*/</span></span><br><span class="line"><span class="undefined">					status = 1;</span></span><br><span class="line"><span class="undefined">				$.each(nodes, function(i, item) &#123;</span></span><br><span class="line"><span class="undefined">					/*将状态改变的节点id输出到数组*/</span></span><br><span class="line"><span class="undefined">					designIds.push(item.id);</span></span><br><span class="line"><span class="undefined">					/*将节点的初始状态置为当前状态。否则每次勾选操作获取状态改变节点时只会跟树初始化的状态相比较。*/</span></span><br><span class="line"><span class="undefined">					item.checkedOld = item.checked;</span></span><br><span class="line"><span class="undefined">				&#125;)</span></span><br><span class="line"><span class="undefined">				$.ajax(&#123;</span></span><br><span class="line"><span class="undefined">					type: "Post",</span></span><br><span class="line"><span class="undefined">					url: "url",</span></span><br><span class="line"><span class="undefined">					data: &#123;</span></span><br><span class="line"><span class="undefined">						"designIds": designIds</span></span><br><span class="line"><span class="undefined">					&#125;,</span></span><br><span class="line"><span class="undefined">					success: function(data) &#123;</span></span><br><span class="line"><span class="undefined">						RealBimOcx.BatchAddSubClrInfoBegin();</span></span><br><span class="line"><span class="undefined">						$.each(data.result, function(i, item) &#123;</span></span><br><span class="line"><span class="undefined">							/*这里根据发生改变的节点是勾选还是为勾选进行相关逻辑操作。*/</span></span><br><span class="line"><span class="undefined">							if(status == 1)</span></span><br><span class="line"><span class="undefined">								RealBimOcx.AddSubClrInfo(item, 255, 255, 0);</span></span><br><span class="line"><span class="undefined">							else</span></span><br><span class="line"><span class="undefined">								RealBimOcx.AddSubClrInfo(item, 0, 255, 0);</span></span><br><span class="line"><span class="undefined">							if(i % 100 == 0) &#123;</span></span><br><span class="line"><span class="undefined">								RealBimOcx.BatchAddSubClrInfoEnd();</span></span><br><span class="line"><span class="undefined">								RealBimOcx.BatchAddSubClrInfoBegin();</span></span><br><span class="line"><span class="undefined">							&#125;</span></span><br><span class="line"><span class="undefined">						&#125;)</span></span><br><span class="line"><span class="undefined">						RealBimOcx.BatchAddSubClrInfoEnd();</span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">				&#125;)</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined">			/*节点右键单击回调函数*/</span></span><br><span class="line"><span class="undefined">			function OnRightClick(event, treeId, treeNode) &#123;</span></span><br><span class="line"><span class="undefined">				nowRightClickNode = treeNode;</span></span><br><span class="line"><span class="undefined">				var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				$("#treeDemo").hide();</span></span><br><span class="line"><span class="undefined">				if(treeNode)&#123;</span></span><br><span class="line"><span class="undefined">					/*点击的是节点*/</span></span><br><span class="line"><span class="undefined">					if(treeNode.getParentNode() == null)&#123;</span></span><br><span class="line"><span class="undefined">						zTree.cancelSelectedNode();</span></span><br><span class="line"><span class="undefined">						/*根据鼠标位置显示右键操作面板*/</span></span><br><span class="line"><span class="undefined">						showRMenu("root", event.clientX, event.clientY);</span></span><br><span class="line"><span class="undefined">					&#125; else if(!treeNode.noR) &#123;</span></span><br><span class="line"><span class="undefined">						zTree.selectNode(treeNode,false,false);</span></span><br><span class="line"><span class="undefined">						showRMenu("node", event.clientX, event.clientY);</span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">				$("#treeDemo").show();</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*根据节点类型，控制右键操作菜单哪些可用哪些不可用*/</span></span><br><span class="line"><span class="undefined">			function showRMenu(type, x, y) &#123;</span></span><br><span class="line"><span class="undefined">				$("#rMenu ul").show();</span></span><br><span class="line"><span class="undefined">				if(type == "root") &#123;</span></span><br><span class="line"><span class="undefined">					$("#m_del").hide();</span></span><br><span class="line"><span class="undefined">					$("#m_edit").hide();</span></span><br><span class="line"><span class="undefined">					$("#m_up").hide();</span></span><br><span class="line"><span class="undefined">					$("#m_down").hide();</span></span><br><span class="line"><span class="undefined">					$("#m_ulevel").hide();</span></span><br><span class="line"><span class="undefined">					$("#m_dlevel").hide();</span></span><br><span class="line"><span class="undefined">					$("#m_add").addClass('mboder');</span></span><br><span class="line"><span class="undefined">				&#125; else &#123;</span></span><br><span class="line"><span class="undefined">					$("#m_del").show();</span></span><br><span class="line"><span class="undefined">					$("#m_edit").show();</span></span><br><span class="line"><span class="undefined">					$("#m_up").show();</span></span><br><span class="line"><span class="undefined">					$("#m_down").show();</span></span><br><span class="line"><span class="undefined">					$("#m_add").removeClass('mboder');</span></span><br><span class="line"><span class="undefined">					$("#m_ulevel").show();</span></span><br><span class="line"><span class="undefined">					$("#m_dlevel").show();</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">				$("#rMenu").css(&#123;</span></span><br><span class="line"><span class="undefined">					"top": y + "px",</span></span><br><span class="line"><span class="undefined">					"left": x + "px",</span></span><br><span class="line"><span class="undefined">					"display": "block"</span></span><br><span class="line"><span class="undefined">				&#125;);</span></span><br><span class="line"><span class="undefined">				$("body").bind("mousedown", onBodyMouseDown);</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*隐藏右键面板*/</span></span><br><span class="line"><span class="undefined">			function hideRMenu() &#123;</span></span><br><span class="line"><span class="undefined">				var rMenu = $("#rMenu");</span></span><br><span class="line"><span class="undefined">				if(rMenu) rMenu.css(&#123;</span></span><br><span class="line"><span class="undefined">					"display": "none"</span></span><br><span class="line"><span class="undefined">				&#125;);</span></span><br><span class="line"><span class="undefined">				$("body").unbind("mousedown", onBodyMouseDown);</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*单击页面其他位置 隐藏右键面板*/</span></span><br><span class="line"><span class="undefined">			function onBodyMouseDown(event) &#123;</span></span><br><span class="line"><span class="undefined">				if(!(event.target.id == "rMenu" || $(event.target).parents("#rMenu").length &gt; 0)) &#123;</span></span><br><span class="line"><span class="undefined">					$("#rMenu").css(&#123;</span></span><br><span class="line"><span class="undefined">						"display": "none"</span></span><br><span class="line"><span class="undefined">					&#125;);</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*增加节点*/</span></span><br><span class="line"><span class="undefined">			function addTreeNode() &#123;</span></span><br><span class="line"><span class="undefined">			 	var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">				var name = window.prompt("请输入新增的子节点的名称：");</span></span><br><span class="line"><span class="undefined">				if(name == null || name == "")return;</span></span><br><span class="line"><span class="undefined">				var newNode = &#123;</span></span><br><span class="line"><span class="undefined">					name: name</span></span><br><span class="line"><span class="undefined">				&#125;;</span></span><br><span class="line"><span class="undefined">				newNode.checked = nowRightClickNode.checked;</span></span><br><span class="line"><span class="undefined">				newNode.pid = nowRightClickNode.id;</span></span><br><span class="line"><span class="undefined">				zTree.addNodes(nowRightClickNode, newNode);</span></span><br><span class="line"><span class="undefined">				/*得到新增加的节点*/</span></span><br><span class="line"><span class="undefined">				var node = zTree.getNodeByParam("name", name, null); </span></span><br><span class="line"><span class="undefined">				/*选中新增加的节点*/</span></span><br><span class="line"><span class="undefined">				zTree.selectNode(node);</span></span><br><span class="line"><span class="undefined">				/*让新增加的节点处于编辑状态*/</span></span><br><span class="line"><span class="undefined">				zTree.editName(node); </span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*编辑节点*/</span></span><br><span class="line"><span class="undefined">			function editTreeNode() &#123;</span></span><br><span class="line"><span class="undefined">				var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				/*得到选中节点集合*/</span></span><br><span class="line"><span class="undefined">				var nodes = zTree.getSelectedNodes(); </span></span><br><span class="line"><span class="undefined">				if (nodes &amp;&amp; nodes.length &gt; 0) &#123;</span></span><br><span class="line"><span class="undefined">					/*得到选中节点的父节点*/</span></span><br><span class="line"><span class="undefined">					var parent = nodes[0].getParentNode(); </span></span><br><span class="line"><span class="undefined">					if (parent) &#123;</span></span><br><span class="line"><span class="undefined">						/*如果选中节点父节点存在，将当前节点的pid属性值设置为父节点的id*/</span></span><br><span class="line"><span class="undefined">						nodes[0].pid = parent.id; </span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">					/*让选中节点处于编辑状态*/</span></span><br><span class="line"><span class="undefined">					zTree.editName(nodes[0]); </span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined">			/*节点编辑状态离开时触发事件 */</span></span><br><span class="line"><span class="undefined">		    /*编辑并保存节点（对编辑的检查）*/</span></span><br><span class="line"><span class="undefined">		    function beforeRename(treeId, treeNode, newName, isCancel) &#123;</span></span><br><span class="line"><span class="undefined">				if (newName.length == 0) &#123; //节点名称判断</span></span><br><span class="line"><span class="undefined">					alert("节点名不能为空。");</span></span><br><span class="line"><span class="undefined">					return false;</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">				return true;</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined">			/*删除节点数据 */</span></span><br><span class="line"><span class="undefined">			function removeTreeNode() &#123;</span></span><br><span class="line"><span class="undefined">			 	var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">				var nodes = zTree.getSelectedNodes();</span></span><br><span class="line"><span class="undefined">				if (nodes &amp;&amp; nodes.length &gt; 0) &#123;</span></span><br><span class="line"><span class="undefined">					if (nodes[0].children &amp;&amp; nodes[0].children.length &gt; 0) &#123;</span></span><br><span class="line"><span class="undefined">						if(window.confirm("包含下级子节点，是否连带删除？"))&#123;</span></span><br><span class="line"><span class="undefined">							zTree.removeNode(nodes[0]);</span></span><br><span class="line"><span class="undefined">						&#125;</span></span><br><span class="line"><span class="undefined">					&#125; else &#123;</span></span><br><span class="line"><span class="undefined">						zTree.removeNode(nodes[0]);</span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;;</span></span><br><span class="line"><span class="undefined">			/*上移*/</span></span><br><span class="line"><span class="undefined">			function m_up()&#123;</span></span><br><span class="line"><span class="undefined">				var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">				var nodes = zTree.getSelectedNodes();</span></span><br><span class="line"><span class="undefined">				var n = nodes[0];</span></span><br><span class="line"><span class="undefined">				if(n &amp;&amp; !n.isFirstNode)&#123;</span></span><br><span class="line"><span class="undefined">					zTree.moveNode(n.getPreNode(),n,"prev");</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*下移*/</span></span><br><span class="line"><span class="undefined">			function m_down()&#123;</span></span><br><span class="line"><span class="undefined">				var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">				var nodes = zTree.getSelectedNodes();</span></span><br><span class="line"><span class="undefined">				var n = nodes[0];</span></span><br><span class="line"><span class="undefined">				if(n &amp;&amp; !n.isLastNode)&#123;</span></span><br><span class="line"><span class="undefined">					zTree.moveNode(n.getNextNode(),n,"next");</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*重置节点*/</span></span><br><span class="line"><span class="undefined">			function resetTree()&#123;</span></span><br><span class="line"><span class="undefined">				var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">				var nodes = zTree.getSelectedNodes();</span></span><br><span class="line"><span class="undefined">				if(nodes)checkNNode(zTree , nodes[0])</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*升一级*/</span></span><br><span class="line"><span class="undefined">			function uLevel()&#123;</span></span><br><span class="line"><span class="undefined">				var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">				var nodes = zTree.getSelectedNodes();</span></span><br><span class="line"><span class="undefined">				var n = nodes[0];</span></span><br><span class="line"><span class="undefined">				if(n)&#123;</span></span><br><span class="line"><span class="undefined">					zTree.moveNode(n.getParentNode(),n,"next");</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">			/*降一级*/</span></span><br><span class="line"><span class="undefined">			function dLevel()&#123;</span></span><br><span class="line"><span class="undefined">				var zTree = $.fn.zTree.getZTreeObj("treeDemo");</span></span><br><span class="line"><span class="undefined">				hideRMenu();</span></span><br><span class="line"><span class="undefined">				var nodes = zTree.getSelectedNodes();</span></span><br><span class="line"><span class="undefined">				var n = nodes[0];</span></span><br><span class="line"><span class="undefined">				if(n)&#123;</span></span><br><span class="line"><span class="undefined">					/*默认往下一个节点降*/</span></span><br><span class="line"><span class="undefined">					/*zTree.moveNode(n.getNextNode(),n,"inner");*/</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"treeDemo"</span> <span class="attr">style</span>=<span class="string">"background-color: #7EC4CC;"</span> <span class="attr">class</span>=<span class="string">"ztree"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"getCheckedNodes"</span>&gt;</span>获取选中的节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"addNode"</span>&gt;</span>添加节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"checkAll"</span>&gt;</span>全选所有节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"checkAllNo"</span>&gt;</span>反选所有节点<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--自定义的右键弹出面板--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"rMenu"</span> <span class="attr">style</span>=<span class="string">"z-index:100;position: absolute;background-color: white;"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"rMenuUl"</span><span class="attr">onselectstart</span>=<span class="string">"return false;"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_add"</span> <span class="attr">onclick</span>=<span class="string">"addTreeNode()"</span>&gt;</span>新增节点<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_del"</span> <span class="attr">onclick</span>=<span class="string">"removeTreeNode()"</span>&gt;</span>删除节点<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_edit"</span> <span class="attr">onclick</span>=<span class="string">"editTreeNode()"</span> <span class="attr">style</span>=<span class="string">"border-bottom:1px solid #cecece"</span>&gt;</span>编辑节点<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_up"</span> <span class="attr">onclick</span>=<span class="string">"m_up()"</span>&gt;</span>上移<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_down"</span> <span class="attr">onclick</span>=<span class="string">"m_down()"</span> <span class="attr">style</span>=<span class="string">"border-bottom:1px solid #cecece"</span>&gt;</span>下移<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_reset"</span> <span class="attr">onclick</span>=<span class="string">"resetTree()"</span>&gt;</span>重置节点<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_ulevel"</span> <span class="attr">onclick</span>=<span class="string">"uLevel()"</span>&gt;</span>升一级<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"m_dlevel"</span> <span class="attr">onclick</span>=<span class="string">"dLevel()"</span>&gt;</span>降一级<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><hr>
+<p><a href="http://github.ifdream.xin/demo/zTree/zTreeDemo.html" target="_blank" rel="noopener">http://github.ifdream.xin/demo/zTree/zTreeDemo.html</a></p>
+<hr>
+<h2 id="资源文件链接"><a href="#资源文件链接" class="headerlink" title="资源文件链接"></a>资源文件链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://github.ifdream.xin/css/zTree/demo.css</span><br><span class="line">http://github.ifdream.xin/css/zTree/zTreeStyle.css</span><br><span class="line">http://github.ifdream.xin/css/zTree/img.zip</span><br><span class="line">http://github.ifdream.xin/js/jquery.min.js</span><br><span class="line">http://github.ifdream.xin/js/zTree/jquery.ztree.all.min.js</span><br></pre></td></tr></table></figure>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>zTree插件的功能很强大，官方API也很详细，博主才只是略学了一二，读者应该学不止于此，可以上官方API上看看，再进一步学学，也可以在下面留言，和博主探讨，本文若有不足希望大家能够指出，一起学习，一起进步，谢谢！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果您对博主的原创满意，可以留个零头来支持下博主呢~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="羊末离殇 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="羊末离殇 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    羊末离殇
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://github.ymlsfly.xin/2018/01/29/zTree的试炼/" title="zTree的试炼">http://github.ymlsfly.xin/2018/01/29/zTree的试炼/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/zTree/" <i class="fa fa-tag"></i> zTree</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/29/高亮代码的集结/" rel="next" title="高亮代码的集结">
+                <i class="fa fa-chevron-left"></i> 高亮代码的集结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.jpg"
+                alt="羊末离殇" />
+            
+              <p class="site-author-name" itemprop="name">羊末离殇</p>
+              <p class="site-description motion-element" itemprop="description">常常都是徘徊...清醒如酒</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/1139195320" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:fy1139195320@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能介绍"><span class="nav-number">2.</span> <span class="nav-text">功能介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贴代码"><span class="nav-number">3.</span> <span class="nav-text">贴代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果展示"><span class="nav-number">4.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源文件链接"><span class="nav-number">5.</span> <span class="nav-text">资源文件链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+      <div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=518076124&auto=0&height=66"></iframe>
+      </div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">生活不仅仅只有代码，还有诗与远方...</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">21.6k</span>
+  
+</div>
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  |
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共21.6k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytpLd6OP';
+      var conf = 'aabaed7d4c36a7ce477c04154ff2d8dc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <!-- 添加点击爆炸效果 -->
+  
+  <!-- 添加页面小宠物 -->
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    var trElement = document.getElementById('hexo-helper-live2d');
+    trElement.parentNode.removeChild(trElement);
+    return;
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/nipsilon.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
