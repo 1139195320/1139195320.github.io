@@ -343,11 +343,11 @@
       <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
+      <category term="mantis" scheme="http://github.ymlsfly.xin/tags/mantis/"/>
+    
       <category term="测试" scheme="http://github.ymlsfly.xin/tags/%E6%B5%8B%E8%AF%95/"/>
     
       <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="mantis" scheme="http://github.ymlsfly.xin/tags/mantis/"/>
     
   </entry>
   
@@ -375,11 +375,11 @@
       <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="testlink" scheme="http://github.ymlsfly.xin/tags/testlink/"/>
-    
       <category term="测试" scheme="http://github.ymlsfly.xin/tags/%E6%B5%8B%E8%AF%95/"/>
     
       <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="testlink" scheme="http://github.ymlsfly.xin/tags/testlink/"/>
     
   </entry>
   
