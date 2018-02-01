@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="羊末离殇的独立博客">
 <meta property="og:description" content="前言windows图形化界面，在它上面安装配置软件，一般都下一步下一步就完成了，安装jdk也如此，只是配置环境变量需要在：这台电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量中配置JAVA_HOME和PATH即可。linux命令行界面，让很多人有点小怕，不会配置jdk，其实也并不难，简单几步，跟着博主配置的步骤走，即可完成。 步骤开始前提条件在windows上下载好需要安装的jdk压缩包">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-20T06:10:14.763Z">
+<meta property="og:updated_time" content="2018-01-29T11:20:46.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux配置jdk">
 <meta name="twitter:description" content="前言windows图形化界面，在它上面安装配置软件，一般都下一步下一步就完成了，安装jdk也如此，只是配置环境变量需要在：这台电脑-&amp;gt;属性-&amp;gt;高级系统设置-&amp;gt;环境变量中配置JAVA_HOME和PATH即可。linux命令行界面，让很多人有点小怕，不会配置jdk，其实也并不难，简单几步，跟着博主配置的步骤走，即可完成。 步骤开始前提条件在windows上下载好需要安装的jdk压缩包">
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  365
+                  388
                 </span>
               
 
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -460,7 +460,7 @@
 <h3 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h3><p>先执行解压命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /software</span><br><span class="line">tar -xzvf jdk-8u144-linux-x64.tar.gz</span><br></pre></td></tr></table></figure></p>
 <h3 id="环境变量（临时性，及时生效）"><a href="#环境变量（临时性，及时生效）" class="headerlink" title="环境变量（临时性，及时生效）"></a>环境变量（临时性，及时生效）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/software/jdk1.8.0_144</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/jre/lib/rt.jar:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
 <p>此处要注意JAVA_HOME的路径，一定是jdk解压包的绝对路径，和windows一样。</p>
-<h3 id="环境变量（永久生效，但不及时生效）"><a href="#环境变量（永久生效，但不及时生效）" class="headerlink" title="环境变量（永久生效，但不及时生效）"></a>环境变量（永久生效，但不及时生效）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#把环境变量配置（上面三句话）到profile文件里，放到done后面</span></span><br><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+<h3 id="环境变量（永久生效，但不及时生效）"><a href="#环境变量（永久生效，但不及时生效）" class="headerlink" title="环境变量（永久生效，但不及时生效）"></a>环境变量（永久生效，但不及时生效）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#把环境变量配置（上面三句话）到profile文件里，放到done后面</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="comment">#可以执行下面这句命令使该文件立即生效</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
 <h3 id="检测"><a href="#检测" class="headerlink" title="检测"></a>检测</h3><p>到此，你的服务器上的jdk就配置好了，可以试一下命令【java -version】，服务器会显示出当前环境变量中的java版本。</p>
 
       
@@ -675,7 +675,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -686,7 +686,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -697,7 +697,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -793,7 +793,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.6k</span>
+    <span title="Site words total count">22.0k</span>
   
 </div>
 
@@ -820,7 +820,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共21.6k字</span>
+  <span class="post-count">博客全站共22.0k字</span>
 </div>
 
         
