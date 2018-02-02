@@ -38,9 +38,9 @@
       <category term="异常错误集" scheme="http://github.ymlsfly.xin/categories/%E5%BC%82%E5%B8%B8%E9%94%99%E8%AF%AF%E9%9B%86/"/>
     
     
-      <category term="maven" scheme="http://github.ymlsfly.xin/tags/maven/"/>
-    
       <category term="eclipse报错" scheme="http://github.ymlsfly.xin/tags/eclipse%E6%8A%A5%E9%94%99/"/>
+    
+      <category term="maven" scheme="http://github.ymlsfly.xin/tags/maven/"/>
     
   </entry>
   
@@ -143,9 +143,9 @@
       <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="linux" scheme="http://github.ymlsfly.xin/tags/linux/"/>
-    
       <category term="tomcat" scheme="http://github.ymlsfly.xin/tags/tomcat/"/>
+    
+      <category term="linux" scheme="http://github.ymlsfly.xin/tags/linux/"/>
     
   </entry>
   
@@ -312,11 +312,11 @@
       <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
+      <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
+    
       <category term="server" scheme="http://github.ymlsfly.xin/tags/server/"/>
     
       <category term="tomcat" scheme="http://github.ymlsfly.xin/tags/tomcat/"/>
-    
-      <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
