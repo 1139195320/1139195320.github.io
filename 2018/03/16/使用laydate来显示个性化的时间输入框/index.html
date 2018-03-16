@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16×16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32×32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="datetime," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="羊末离殇的独立博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="内容简介123456789101112131415161718192021222324常规用法国际化年选择器年月选择器时间选择器日期时间选择器日期范围年范围年月范围时间范围日期时间范围自定义格式开启公历节日自定义重要日限定可选日期限定可选时间初始赋值选中后的回调日期切换的回调不出现底部栏只出现确定按钮自定义事件自定义颜色格子主题 代码展示123456789101112131415161718192">
+<meta name="keywords" content="datetime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用laydate来显示个性化的时间输入框">
+<meta property="og:url" content="http://github.ymlsfly.xin/2018/03/16/使用laydate来显示个性化的时间输入框/index.html">
+<meta property="og:site_name" content="羊末离殇的独立博客">
+<meta property="og:description" content="内容简介123456789101112131415161718192021222324常规用法国际化年选择器年月选择器时间选择器日期时间选择器日期范围年范围年月范围时间范围日期时间范围自定义格式开启公历节日自定义重要日限定可选日期限定可选时间初始赋值选中后的回调日期切换的回调不出现底部栏只出现确定按钮自定义事件自定义颜色格子主题 代码展示123456789101112131415161718192">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-16T11:05:11.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用laydate来显示个性化的时间输入框">
+<meta name="twitter:description" content="内容简介123456789101112131415161718192021222324常规用法国际化年选择器年月选择器时间选择器日期时间选择器日期范围年范围年月范围时间范围日期时间范围自定义格式开启公历节日自定义重要日限定可选日期限定可选时间初始赋值选中后的回调日期切换的回调不出现底部栏只出现确定按钮自定义事件自定义颜色格子主题 代码展示123456789101112131415161718192">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '5HXMI8QJO0',
+      apiKey: '5f2ef4698fa0b13503ac75567b2e948b',
+      indexName: 'github_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与${query}相关的内容","hits_stats":"找到${hits}条相关记录，耗时${time}毫秒"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>使用laydate来显示个性化的时间输入框 | 羊末离殇的独立博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/1139195320"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">羊末离殇的独立博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">与代码的持久博弈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+  
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.ymlsfly.xin/2018/03/16/使用laydate来显示个性化的时间输入框/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="羊末离殇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="羊末离殇的独立博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用laydate来显示个性化的时间输入框</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T17:08:35+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日期时间输入框/" itemprop="url" rel="index">
+                    <span itemprop="name">日期时间输入框</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/03/16/使用laydate来显示个性化的时间输入框/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/03/16/使用laydate来显示个性化的时间输入框/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,554
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">常规用法</span><br><span class="line">国际化</span><br><span class="line">年选择器</span><br><span class="line">年月选择器</span><br><span class="line">时间选择器</span><br><span class="line">日期时间选择器</span><br><span class="line">日期范围</span><br><span class="line">年范围</span><br><span class="line">年月范围</span><br><span class="line">时间范围</span><br><span class="line">日期时间范围</span><br><span class="line">自定义格式</span><br><span class="line">开启公历节日</span><br><span class="line">自定义重要日</span><br><span class="line">限定可选日期</span><br><span class="line">限定可选时间</span><br><span class="line">初始赋值</span><br><span class="line">选中后的回调</span><br><span class="line">日期切换的回调</span><br><span class="line">不出现底部栏</span><br><span class="line">只出现确定按钮</span><br><span class="line">自定义事件</span><br><span class="line">自定义颜色</span><br><span class="line">格子主题</span><br></pre></td></tr></table></figure>
+<h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/laydate/laydate.js"</span> &gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">			/*常规用法*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date1_1'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*国际版*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date1_2',</span></span><br><span class="line"><span class="undefined">				lang: 'en'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*年选择器*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date2_1',</span></span><br><span class="line"><span class="undefined">				type: 'year'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*年月选择器*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date2_2',</span></span><br><span class="line"><span class="undefined">				type: 'month'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*时间选择器*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date2_3',</span></span><br><span class="line"><span class="undefined">				type: 'time'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*日期时间选择器*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date2_4',</span></span><br><span class="line"><span class="undefined">				type: 'datetime'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*日期范围*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date3_1',</span></span><br><span class="line"><span class="undefined">				range: true</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*年范围*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date3_2',</span></span><br><span class="line"><span class="undefined">				type: 'year',</span></span><br><span class="line"><span class="undefined">				range: true</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*年月范围*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date3_3',</span></span><br><span class="line"><span class="undefined">				type: 'month',</span></span><br><span class="line"><span class="undefined">				range: true</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*时间范围*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date3_4',</span></span><br><span class="line"><span class="undefined">				type: 'time',</span></span><br><span class="line"><span class="undefined">				range: true</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*日期时间范围*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date3_5',</span></span><br><span class="line"><span class="undefined">				type: 'datetime',</span></span><br><span class="line"><span class="undefined">				range: true</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*自定义格式*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date4_1',</span></span><br><span class="line"><span class="undefined">				format: 'yyyy年MM月dd日'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date4_2',</span></span><br><span class="line"><span class="undefined">				format: 'dd/MM/yyyy'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date4_3',</span></span><br><span class="line"><span class="undefined">				format: 'yyyyMM'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date4_4',</span></span><br><span class="line"><span class="undefined">				type: 'time',</span></span><br><span class="line"><span class="undefined">				format: 'H点M分'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date4_5',</span></span><br><span class="line"><span class="undefined">				type: 'month',</span></span><br><span class="line"><span class="undefined">				range: '→',</span></span><br><span class="line"><span class="undefined">				format: 'yyyy-MM'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date4_6',</span></span><br><span class="line"><span class="undefined">				type: 'datetime',</span></span><br><span class="line"><span class="undefined">				range: '到',</span></span><br><span class="line"><span class="undefined">				format: 'yyyy年M月d日H时m分s秒'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*开启公历节日*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date5_1',</span></span><br><span class="line"><span class="undefined">				calendar: true</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*自定义重要日*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date5_2',</span></span><br><span class="line"><span class="undefined">				mark: &#123;</span></span><br><span class="line"><span class="undefined">					'0-10-14': '生日',</span></span><br><span class="line"><span class="undefined">					'0-12-31': '跨年' //每年的日期</span></span><br><span class="line"><span class="undefined">						,</span></span><br><span class="line"><span class="undefined">					'0-0-10': '工资' //每月某天</span></span><br><span class="line"><span class="undefined">						,</span></span><br><span class="line"><span class="undefined">					'0-0-15': '月中',</span></span><br><span class="line"><span class="undefined">					'2017-8-15': '' //如果为空字符，则默认显示数字+徽章</span></span><br><span class="line"><span class="undefined">						,</span></span><br><span class="line"><span class="undefined">					'2099-10-14': '呵呵'</span></span><br><span class="line"><span class="undefined">				&#125;,</span></span><br><span class="line"><span class="undefined">				done: function(value, date) &#123;</span></span><br><span class="line"><span class="undefined">					if(date.year === 2017 &amp;&amp; date.month === 8 &amp;&amp; date.date === 15) &#123; </span></span><br><span class="line"><span class="undefined">						/*点击2017年8月15日，弹出提示语*/</span></span><br><span class="line"><span class="undefined">						alert('这一天是：中国人民抗日战争胜利72周年');</span></span><br><span class="line"><span class="undefined">					&#125;</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*限定可选日期*/</span></span><br><span class="line"><span class="undefined">			var ins22 = laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date6_1',</span></span><br><span class="line"><span class="undefined">				min: '2016-10-14',</span></span><br><span class="line"><span class="undefined">				max: '2080-10-14',</span></span><br><span class="line"><span class="undefined">				ready: function() &#123;</span></span><br><span class="line"><span class="xml">					ins22.hint('日期可选值设定在 <span class="tag">&lt;<span class="name">br</span>&gt;</span> 2016-10-14 到 2080-10-14');</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*前后若干天可选，这里以7天为例*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date6_2',</span></span><br><span class="line"><span class="undefined">				min: -7,</span></span><br><span class="line"><span class="undefined">				max: 7</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*限定可选时间*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date6_3',</span></span><br><span class="line"><span class="undefined">				type: 'time',</span></span><br><span class="line"><span class="undefined">				min: '09:30:00',</span></span><br><span class="line"><span class="undefined">				max: '17:30:00',</span></span><br><span class="line"><span class="undefined">				btns: ['clear', 'confirm']</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*初始赋值*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date7_1',</span></span><br><span class="line"><span class="undefined">				value: '1989-10-14'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*选中后的回调*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date7_2',</span></span><br><span class="line"><span class="undefined">				done: function(value, date) &#123;</span></span><br><span class="line"><span class="undefined">					alert('你选择的日期是：' + value + '\n获得的对象是' + JSON.stringify(date));</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*日期切换的回调*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date7_3',</span></span><br><span class="line"><span class="undefined">				change: function(value, date) &#123;</span></span><br><span class="line"><span class="undefined">					alert('你选择的日期是：' + value + '\n\n获得的对象是' + JSON.stringify(date));</span></span><br><span class="line"><span class="undefined">				&#125;</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*不出现底部栏*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date7_4',</span></span><br><span class="line"><span class="undefined">				showBottom: false</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*只出现确定按钮*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date7_5',</span></span><br><span class="line"><span class="undefined">				btns: ['confirm']</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*自定义事件*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date7_6',</span></span><br><span class="line"><span class="undefined">				trigger: 'mousedown'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*墨绿主题*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date8_1',</span></span><br><span class="line"><span class="undefined">				theme: 'molv'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*自定义颜色*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date8_2',</span></span><br><span class="line"><span class="undefined">				theme: '#393D49'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">			/*格子主题*/</span></span><br><span class="line"><span class="undefined">			laydate.render(&#123;</span></span><br><span class="line"><span class="undefined">				elem: '.date8_3',</span></span><br><span class="line"><span class="undefined">				theme: 'grid'</span></span><br><span class="line"><span class="undefined">			&#125;);</span></span><br><span class="line"><span class="undefined">		</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">			date:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			datetime-local:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"datetime-local"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			time:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			中文版：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date1_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			国际版：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date1_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			年选择器：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date2_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			年月选择器：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date2_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			时间选择器：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date2_3"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			日期时间选择器：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date2_4"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			日期范围：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date3_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			年范围：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date3_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			年月范围：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date3_3"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			时间范围：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date3_4"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			日期时间范围：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date3_5"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			yyyy年MM月dd日：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date4_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			dd/MM/yyyy：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date4_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			yyyyMM：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date4_3"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			H点M分：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date4_4"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			yyyy-MM：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date4_5"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			yyyy年M月d日H时m分s秒：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date4_6"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			开启公历节日：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date5_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			自定义重要日：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date5_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			限定可选日期：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date6_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			前后若干天可选：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date6_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			限定可选时间：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date6_3"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			初始赋值：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date7_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			选中后的回调：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date7_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			日期切换的回调：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date7_3"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			不出现底部栏：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date7_4"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			只出现确定按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date7_5"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			自定义事件：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date7_6"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			墨绿主题：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date8_1"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			自定义颜色：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date8_2"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			格子主题：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span> <span class="attr">class</span>=<span class="string">"date8_3"</span>/&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><hr>
+<p><a href="http://github.ifdream.xin/demo/laydate/laydateDemo.html" target="_blank" rel="noopener">http://github.ifdream.xin/demo/laydate/laydateDemo.html</a></p>
+<hr>
+<h2 id="资源文件链接"><a href="#资源文件链接" class="headerlink" title="资源文件链接"></a>资源文件链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://github.ifdream.xin/js/laydate/laydate.js</span><br><span class="line">http://github.ifdream.xin/js/laydate/theme.rar</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果您对博主的原创满意，可以留个零头来支持下博主呢~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="羊末离殇 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="羊末离殇 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    羊末离殇
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://github.ymlsfly.xin/2018/03/16/使用laydate来显示个性化的时间输入框/" title="使用laydate来显示个性化的时间输入框">http://github.ymlsfly.xin/2018/03/16/使用laydate来显示个性化的时间输入框/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/datetime/" <i class="fa fa-tag"></i> datetime</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/30/cannot-be-read-or-is-not-a-valid-ZIP-file/" rel="next" title="cannot be read or is not a valid ZIP file">
+                <i class="fa fa-chevron-left"></i> cannot be read or is not a valid ZIP file
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.jpg"
+                alt="羊末离殇" />
+            
+              <p class="site-author-name" itemprop="name">羊末离殇</p>
+              <p class="site-description motion-element" itemprop="description">常常都是徘徊...清醒如酒</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/1139195320" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:fy1139195320@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容简介"><span class="nav-number">1.</span> <span class="nav-text">内容简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码展示"><span class="nav-number">2.</span> <span class="nav-text">代码展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果展示"><span class="nav-number">3.</span> <span class="nav-text">效果展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源文件链接"><span class="nav-number">4.</span> <span class="nav-text">资源文件链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+      <div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=518076124&auto=0&height=66"></iframe>
+      </div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">生活不仅仅只有代码，还有诗与远方...</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">23.5k</span>
+  
+</div>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272117531'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1272117531%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+|
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  |
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共23.5k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272117531&web_id=1272117531" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytpLd6OP';
+      var conf = 'aabaed7d4c36a7ce477c04154ff2d8dc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <!-- 添加点击爆炸效果 -->
+  
+  <!-- 添加页面小宠物 -->
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    var trElement = document.getElementById('hexo-helper-live2d');
+    trElement.parentNode.removeChild(trElement);
+    return;
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/nipsilon.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
