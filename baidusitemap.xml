@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://github.ymlsfly.xin/2018/12/19/effect-java-study/</loc>
+    <lastmod>2018-12-19T14:19:05.150Z</lastmod>
+    <data>
+        <display>
+        <title>effect_java_study</title>
+        <pubTime>2018-12-19T14:07:07.000Z</pubTime>
+        
+        <tag>effect-java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://github.ymlsfly.xin/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://github.ymlsfly.xin/2018/12/19/svn/</loc>
+    <lastmod>2018-12-19T12:49:11.775Z</lastmod>
+    <data>
+        <display>
+        <title>svn安装部署</title>
+        <pubTime>2018-12-19T12:45:37.000Z</pubTime>
+        
+        <tag>svn</tag>
+         
+         
+           
+             
+              <breadCrumb title="svn" url="http://github.ymlsfly.xin/categories/svn/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://github.ymlsfly.xin/2018/01/12/hello-world/</loc>
     <lastmod>2018-12-18T15:40:10.629Z</lastmod>
     <data>
@@ -311,11 +351,11 @@
         <title>mantis的学习</title>
         <pubTime>2018-01-18T04:38:57.000Z</pubTime>
         
+        <tag>mantis</tag>
+         
         <tag>测试</tag>
          
         <tag>工具</tag>
-         
-        <tag>mantis</tag>
          
          
            
@@ -335,11 +375,11 @@
         <title>testlink的学习</title>
         <pubTime>2018-01-18T01:02:06.000Z</pubTime>
         
-        <tag>testlink</tag>
-         
         <tag>测试</tag>
          
         <tag>工具</tag>
+         
+        <tag>testlink</tag>
          
          
            
