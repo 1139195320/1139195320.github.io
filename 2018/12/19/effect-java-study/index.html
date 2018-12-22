@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="羊末离殇的独立博客">
 <meta property="og:description" content="effect-java学习笔记基本类型和装箱类型的选择 优先使用基本类型而不是装箱的基本类型，也要注意无意识的自动装箱。  警惕内存泄露 清空对象引用应该是例外而不是规范。 当一个类自己管理内存时，程序员应该警惕内存泄漏问题。另一个常见的内存泄漏来源是缓存。  重写equals方法必须遵守的规定equals方法实现了一个等价关系（equivalence relation）。它有以下这些属性:  自">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-22T04:23:08.795Z">
+<meta property="og:updated_time" content="2018-12-22T08:18:37.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="effect_java_study">
 <meta name="twitter:description" content="effect-java学习笔记基本类型和装箱类型的选择 优先使用基本类型而不是装箱的基本类型，也要注意无意识的自动装箱。  警惕内存泄露 清空对象引用应该是例外而不是规范。 当一个类自己管理内存时，程序员应该警惕内存泄漏问题。另一个常见的内存泄漏来源是缓存。  重写equals方法必须遵守的规定equals方法实现了一个等价关系（equivalence relation）。它有以下这些属性:  自">
@@ -417,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  686
+                  1,588
                 </span>
               
 
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -484,7 +484,19 @@
 <li>不要试图从哈希码计算中排除重要的属性来提高性能。</li>
 <li>不要为hashCode返回的值提供详细的规范，因此客户端不能合理地依赖它； 你可以改变它的灵活性。</li>
 </ul>
-<h4 id="始终重写toString方法"><a href="#始终重写toString方法" class="headerlink" title="始终重写toString方法"></a>始终重写toString方法</h4>
+<h4 id="始终重写toString方法"><a href="#始终重写toString方法" class="headerlink" title="始终重写toString方法"></a>始终重写toString方法</h4><h4 id="接口仅用来定义类型"><a href="#接口仅用来定义类型" class="headerlink" title="接口仅用来定义类型"></a>接口仅用来定义类型</h4><ol>
+<li>不在接口中定义常量，将常量放到与其紧密相关联的类或接口中，或将常量定义在工具类中，接口中最好仅保留类型的定义。</li>
+<li>（如果一个非final类实现了常量接口，那么此类的所有子类都会被该常量接口所污染）。</li>
+<li>如果大量使用实用工具类导出的常量，则通过使用静态导入来限定具有类名的常量。</li>
+</ol>
+<h4 id="优先考虑静态成员类"><a href="#优先考虑静态成员类" class="headerlink" title="优先考虑静态成员类"></a>优先考虑静态成员类</h4><p>嵌套类（nested class）是在另一个类中定义的类。 嵌套类应该只存在于其宿主类（enclosing class）中。 如果一个嵌套类在其他一些情况下是有用的，那么它应该是一个顶级类。 有四种嵌套类：静态成员类，非静态成员类，匿名类和局部类。 除了第一种以外，剩下的三种都被称为内部类（inner class）。   </p>
+<ul>
+<li>静态成员类是最简单的嵌套类。 最好把它看作是一个普通的类，恰好在另一个类中声明，并且可以访问所有宿主类的成员，甚至是那些被声明为私有类的成员。 静态成员类是其宿主类的静态成员，并遵循与其他静态成员相同的可访问性规则。 如果它被声明为private，则只能在宿主类中访问，静态成员类的一个常见用途是作为公共帮助类，仅在与其外部类一起使用时才有用。</li>
+<li>非静态成员类实例和其宿主实例之间的关联是在创建成员类实例时建立的，并且之后不能被修改。 通常情况下，通过在宿主类的实例方法中调用非静态成员类构造方法来自动建立关联。 尽管很少有可能使用表达式enclosingInstance.new MemberClass(args)手动建立关联。 该关联在非静态成员类实例中占用了空间，并为其构建添加了时间开销。</li>
+<li>一个匿名类没有名字。 它不是其宿主类的成员。 它不是与其他成员一起声明，而是在使用时同时声明和实例化。 在表达式合法的代码中，匿名类是允许的。 当且仅当它们出现在非静态上下文中时，匿名类才会封装实例。 但是，即使它们出现在静态上下文中，它们也不能有除常量型变量之外的任何静态成员，这些常量型变量包括final的基本类型，或者初始化常量表达式的字符串属性。匿名类是创建小方法对象和处理对象的首选方法，但lambda表达式现在是首选。 匿名类的另一个常见用途是实现静态工厂方法。</li>
+<li>局部类是四种嵌套类中使用最少的。 一个局部类可以在任何可以声明局部变量的地方声明，并遵守相同的作用域规则。 局部类与其他类型的嵌套类具有共同的属性。 像成员类一样，他们有名字，可以重复使用。 就像匿名类一样，只有在非静态上下文中定义它们时，它们才会包含实例，并且它们不能包含静态成员。 像匿名类一样，应该保持简短，以免损害可读性。</li>
+</ul>
+<h4 id="永远不要将多个顶级类或接口放在一个源文件中。"><a href="#永远不要将多个顶级类或接口放在一个源文件中。" class="headerlink" title="永远不要将多个顶级类或接口放在一个源文件中。"></a>永远不要将多个顶级类或接口放在一个源文件中。</h4>
       
     </div>
     
@@ -769,7 +781,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#effect-java学习笔记"><span class="nav-number">1.</span> <span class="nav-text">effect-java学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本类型和装箱类型的选择"><span class="nav-number">1.0.1.</span> <span class="nav-text">基本类型和装箱类型的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#警惕内存泄露"><span class="nav-number">1.0.2.</span> <span class="nav-text">警惕内存泄露</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重写equals方法必须遵守的规定"><span class="nav-number">1.0.3.</span> <span class="nav-text">重写equals方法必须遵守的规定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在每个类中，在重写-equals-方法的时侯，一定要重写-hashcode-方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">在每个类中，在重写 equals 方法的时侯，一定要重写 hashcode 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#始终重写toString方法"><span class="nav-number">1.0.5.</span> <span class="nav-text">始终重写toString方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#effect-java学习笔记"><span class="nav-number">1.</span> <span class="nav-text">effect-java学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本类型和装箱类型的选择"><span class="nav-number">1.0.1.</span> <span class="nav-text">基本类型和装箱类型的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#警惕内存泄露"><span class="nav-number">1.0.2.</span> <span class="nav-text">警惕内存泄露</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重写equals方法必须遵守的规定"><span class="nav-number">1.0.3.</span> <span class="nav-text">重写equals方法必须遵守的规定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在每个类中，在重写-equals-方法的时侯，一定要重写-hashcode-方法"><span class="nav-number">1.0.4.</span> <span class="nav-text">在每个类中，在重写 equals 方法的时侯，一定要重写 hashcode 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#始终重写toString方法"><span class="nav-number">1.0.5.</span> <span class="nav-text">始终重写toString方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口仅用来定义类型"><span class="nav-number">1.0.6.</span> <span class="nav-text">接口仅用来定义类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优先考虑静态成员类"><span class="nav-number">1.0.7.</span> <span class="nav-text">优先考虑静态成员类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#永远不要将多个顶级类或接口放在一个源文件中。"><span class="nav-number">1.0.8.</span> <span class="nav-text">永远不要将多个顶级类或接口放在一个源文件中。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -809,7 +821,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">25.4k</span>
+    <span title="Site words total count">26.3k</span>
   
 </div>
 
@@ -840,7 +852,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共25.4k字</span>
+  <span class="post-count">博客全站共26.3k字</span>
 </div>
 
         
