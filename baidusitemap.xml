@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://github.ymlsfly.xin/2019/02/24/%E9%9D%A2%E8%AF%95(one)/</loc>
+    <lastmod>2019-02-25T15:35:56.258Z</lastmod>
+    <data>
+        <display>
+        <title>hello problem</title>
+        <pubTime>2019-02-24T15:11:59.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://github.ymlsfly.xin/2018/12/19/effect-java-study/</loc>
     <lastmod>2018-12-22T08:18:37.877Z</lastmod>
     <data>
@@ -305,11 +320,11 @@
         <title>拥有并启动多个Tomcat</title>
         <pubTime>2018-01-18T12:07:37.000Z</pubTime>
         
-        <tag>server</tag>
+        <tag>tomcat</tag>
          
         <tag>工具</tag>
          
-        <tag>tomcat</tag>
+        <tag>server</tag>
          
          
            
