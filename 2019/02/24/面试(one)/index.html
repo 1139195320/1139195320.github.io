@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="羊末离殇的独立博客">
 <meta property="og:description" content="Spring的ioc和aop是怎么实现的？IOC（Inverse Of Control）控制反转也同DI（Dependency Injection）依赖注入。将对在自身对象中的一个内置对象的控制反转，反转后不再由自己本身的对象进行控制这个内置对象的创建，而是由第三方系统去控制这个内置对象的创建。实现：（1）将bean之间的依赖关系尽可能地抓换为关联关系；（2）将对具体类的关联尽可能地转换为对Ja">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T16:15:41.459Z">
+<meta property="og:updated_time" content="2019-02-25T16:18:17.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试(one) 某一次一面">
 <meta name="twitter:description" content="Spring的ioc和aop是怎么实现的？IOC（Inverse Of Control）控制反转也同DI（Dependency Injection）依赖注入。将对在自身对象中的一个内置对象的控制反转，反转后不再由自己本身的对象进行控制这个内置对象的创建，而是由第三方系统去控制这个内置对象的创建。实现：（1）将bean之间的依赖关系尽可能地抓换为关联关系；（2）将对具体类的关联尽可能地转换为对Ja">
@@ -458,7 +458,7 @@
 <h1 id="Spring的ioc和aop是怎么实现的？"><a href="#Spring的ioc和aop是怎么实现的？" class="headerlink" title="Spring的ioc和aop是怎么实现的？"></a>Spring的ioc和aop是怎么实现的？</h1><h2 id="IOC（Inverse-Of-Control）控制反转"><a href="#IOC（Inverse-Of-Control）控制反转" class="headerlink" title="IOC（Inverse Of Control）控制反转"></a>IOC（Inverse Of Control）控制反转</h2><p>也同DI（Dependency Injection）依赖注入。<br>将对在自身对象中的一个内置对象的控制反转，反转后不再由自己本身的对象进行控制这个内置对象的创建，而是由第三方系统去控制这个内置对象的创建。<br>实现：<br>（1）将bean之间的依赖关系尽可能地抓换为关联关系；<br>（2）将对具体类的关联尽可能地转换为对Java interface的关联，而不是与具体的服务对象相关联；<br>（3）Bean实例具体关联相关java interface的哪个实现类的实例，在配置信息的元数据中描述；<br>（4）由IoC组件（或称容器）根据配置信息，实例化具体bean类、将bean之间的依赖关系注入进来。   </p>
 <h2 id="AOP（Aspect-Oriented-Programming）面向切面编程。"><a href="#AOP（Aspect-Oriented-Programming）面向切面编程。" class="headerlink" title="AOP（Aspect Oriented Programming）面向切面编程。"></a>AOP（Aspect Oriented Programming）面向切面编程。</h2><p>当前已经成为一种比较成熟的编程思想，可以用来很好的解决应用系统中分布于各个模块的交叉关注点问题。在轻量级的J2EE中应用开发中，使用AOP来灵活处理一些具有横切性质的系统级服务，如事务处理、安全检查、缓存、对象池管理等，已经成为一种非常适用的解决方案。 AOP中比较重要的概念有：Aspect、JoinPoint、PonitCut、Advice、Introduction、Weave、Target Object、Proxy Object等。   </p>
 <h1 id="tcp的三次握手？"><a href="#tcp的三次握手？" class="headerlink" title="tcp的三次握手？"></a>tcp的三次握手？</h1><p>首先由Client发出请求连接即 SYN=1 ACK=0，TCP规定SYN=1时不能携带数据，但要消耗一个序号,因此声明自己的序号是 seq=x。然后 Server 进行回复确认，即 SYN=1 ACK=1 seq=y，ack=x+1。再然后 Client 再进行一次确认，但不用SYN 了，这时即为 ACK=1, seq=x+1，ack=y+1。</p>
-<h1 id="tcp的状态？"><a href="#tcp的状态？" class="headerlink" title="tcp的状态？"></a>tcp的状态？</h1><p>tcp的11中状态：</p>
+<h1 id="tcp的状态？"><a href="#tcp的状态？" class="headerlink" title="tcp的状态？"></a>tcp的状态？</h1><p>tcp的11种状态：</p>
 <ol>
 <li>CLOSED：初始状态，表示TCP连接是“关闭着的”或“未打开的”。</li>
 <li>LISTEN ：表示服务器端的某个SOCKET处于监听状态，可以接受客户端的连接。</li>
@@ -660,6 +660,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/09/22/CopyUtil/" rel="prev" title="java中复合bean的copy工具类">
+                java中复合bean的copy工具类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -770,7 +774,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -781,7 +785,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -792,7 +796,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -888,7 +892,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">30.7k</span>
+    <span title="Site words total count">32.4k</span>
   
 </div>
 
@@ -919,7 +923,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.7k字</span>
+  <span class="post-count">博客全站共32.4k字</span>
 </div>
 
         

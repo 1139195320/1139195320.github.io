@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16×16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32×32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Copy-util," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="羊末离殇的独立博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="诞生由来之前项目里就经常有bean之间的属性copy，一直都是用spring自带的工具类来解决，方法如下：1org.springframework.beans.BeanUtils#copyProperties(java.lang.Object, java.lang.Object); 该方法只能对一个bean中普通属性字段进行copy，如果这个bean中有其他的bean，即bean中bean，就需要">
+<meta name="keywords" content="Copy-util">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java中复合bean的copy工具类">
+<meta property="og:url" content="http://github.ymlsfly.xin/2019/09/22/CopyUtil/index.html">
+<meta property="og:site_name" content="羊末离殇的独立博客">
+<meta property="og:description" content="诞生由来之前项目里就经常有bean之间的属性copy，一直都是用spring自带的工具类来解决，方法如下：1org.springframework.beans.BeanUtils#copyProperties(java.lang.Object, java.lang.Object); 该方法只能对一个bean中普通属性字段进行copy，如果这个bean中有其他的bean，即bean中bean，就需要">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-22T05:59:43.853Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java中复合bean的copy工具类">
+<meta name="twitter:description" content="诞生由来之前项目里就经常有bean之间的属性copy，一直都是用spring自带的工具类来解决，方法如下：1org.springframework.beans.BeanUtils#copyProperties(java.lang.Object, java.lang.Object); 该方法只能对一个bean中普通属性字段进行copy，如果这个bean中有其他的bean，即bean中bean，就需要">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '5HXMI8QJO0',
+      apiKey: '5f2ef4698fa0b13503ac75567b2e948b',
+      indexName: 'github_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与${query}相关的内容","hits_stats":"找到${hits}条相关记录，耗时${time}毫秒"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>java中复合bean的copy工具类 | 羊末离殇的独立博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/1139195320"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">羊末离殇的独立博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">与代码的持久博弈</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+  
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.ymlsfly.xin/2019/09/22/CopyUtil/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="羊末离殇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="羊末离殇的独立博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java中复合bean的copy工具类</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-22T13:59:42+08:00">
+                2019-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/copy/" itemprop="url" rel="index">
+                    <span itemprop="name">copy</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2019/09/22/CopyUtil/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2019/09/22/CopyUtil/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,684
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="诞生由来"><a href="#诞生由来" class="headerlink" title="诞生由来"></a>诞生由来</h3><p>之前项目里就经常有bean之间的属性copy，一直都是用spring自带的工具类来解决，方法如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.beans.BeanUtils#copyProperties(java.lang.Object, java.lang.Object);</span><br></pre></td></tr></table></figure></p>
+<p>该方法只能对一个bean中普通属性字段进行copy，如果这个bean中有其他的bean，即bean中bean，就需要将其值取出，单独对这个子bean进行copy，然后set进父bean，这种copy如果在bean层次少的时候还无所谓，如果在bean的层次比较深的时候，就会发现很是繁琐了，最近遇到的项目里面有bean和bo的转换，其深度就有四五层，所以如果能想出一个新的工具类，能够一次性copy其bean中bena肯定最好不过了。</p>
+<h4 id="以前用的简单包装工具类"><a href="#以前用的简单包装工具类" class="headerlink" title="以前用的简单包装工具类"></a>以前用的简单包装工具类</h4><ul>
+<li>满足单层bean的copy。</li>
+<li>满足单层bean集合的copy。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CopyUtil</span> </span>&#123;</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"all"</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">copy</span><span class="params">(Object fromBean, Class&lt;T&gt; clz)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> InstantiationException, IllegalAccessException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (fromBean == <span class="keyword">null</span> || clz == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        T result = clz.newInstance();</span><br><span class="line">        BeanUtils.copyProperties(fromBean, result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">copy</span><span class="params">(Collection&lt;?&gt; fromBeans, Class&lt;T&gt; cls)</span></span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> InstantiationException, IllegalAccessException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (CollectionUtils.isEmpty(fromBeans) || <span class="keyword">null</span> == cls) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;T&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Object fromBean : fromBeans) &#123;</span><br><span class="line">            T t = copy(fromBean, cls);</span><br><span class="line">            <span class="keyword">if</span> (t != <span class="keyword">null</span>) &#123;</span><br><span class="line">                list.add(t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过反射写出的新的一套工具类"><a href="#通过反射写出的新的一套工具类" class="headerlink" title="通过反射写出的新的一套工具类"></a>通过反射写出的新的一套工具类</h3><ul>
+<li>满足单层bean的copy。</li>
+<li>满足单层bean集合的copy。</li>
+<li>满足多层bean的复合copy。</li>
+</ul>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>获取fromBean中的属性字段，如果toBean中也有其属性字段，则继续下一步。</li>
+<li>反射执行get/is获取其属性field，得到属性类型type，属性值fieldValue。</li>
+<li>如果type是普通类型，则直接反射执行set方法将值写入toBean。</li>
+<li>如果type是List集合类型，调用getFieldIfList获取对应toBean中的该属性值toList：<ul>
+<li>获取这个List类型属性里面包裹的属性类型type_chird。</li>
+<li>如果type_chird仍是List集合类型，递归调用getFieldIfList去掉List外壳，并将值add进其父List。</li>
+<li>如果type_chird不是集合类型，通过Class.forName获取其class：<ul>
+<li>如果type_chird是一般类型，直接将传进来的list值add进toList返回。</li>
+<li>如果type_chird是child_bean类型，遍历传进来的list，对其每个值又重新调用copy方法set进new出来的新child_bean实例中，返回。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果type是Map类型，暂不考虑。</li>
+<li><p>如果type不是以上类型（忽略考虑了java里面或者其他类里面定义的内置bean类型），判定为bean中bean类型：</p>
+<ul>
+<li><p>反射获取toBean中对应字段的class：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt; newToClass = toClass.getDeclaredField(field.getName()).getType();</span><br><span class="line">Object newToBean = newToClass.newInstance();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次调用copy方法将fieldValue写入newToBean，然后执行set方法将newToBean写入toBean。</p>
+</li>
+</ul>
+</li>
+<li>最终返回toBean即目标结果。</li>
+</ul>
+<h4 id="判断是否是普通字段属性"><a href="#判断是否是普通字段属性" class="headerlink" title="判断是否是普通字段属性"></a>判断是否是普通字段属性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Author</span> fangyang</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Description</span> 返回该字段的类型是否是普通类型</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Date</span> 10:14 2019/9/21</span></span><br><span class="line"><span class="comment">* <span class="doctag">@Param</span> [clazz]</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> boolean</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNormalField</span><span class="params">(Class clazz)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> clazz == <span class="keyword">int</span>.class || clazz == String.class || clazz == <span class="keyword">float</span>.class</span><br><span class="line">        || clazz == <span class="keyword">double</span>.class || clazz == <span class="keyword">char</span>.class || clazz == <span class="keyword">byte</span>.class</span><br><span class="line">        || clazz == <span class="keyword">short</span>.class || clazz == Date.class || clazz == <span class="keyword">boolean</span>.class</span><br><span class="line">        || clazz == Integer.class || clazz == Float.class</span><br><span class="line">        || clazz == Double.class || clazz == Character.class || clazz == Byte.class</span><br><span class="line">        || clazz == Short.class || clazz == Boolean.class</span><br><span class="line">        || clazz == <span class="keyword">long</span>.class || clazz == Long.class;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="整体工具类"><a href="#整体工具类" class="headerlink" title="整体工具类"></a>整体工具类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Auther</span>: fangyang</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2019/9/21 09:39</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CopyUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String LIST_STR = <span class="string">"java.util.List"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String SERIAL_FIELD_STR = <span class="string">"serialVersionUID"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> LIST_STR_LEN = <span class="string">"java.util.List"</span>.length();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"all"</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">copy</span><span class="params">(Object fromBean, Class&lt;T&gt; clz)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> NoSuchMethodException, InvocationTargetException, IllegalAccessException,</span></span><br><span class="line"><span class="function">            NoSuchFieldException, ClassNotFoundException, InstantiationException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (fromBean == <span class="keyword">null</span> || clz == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isNormalField(clz)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (fromBean.getClass() == clz) &#123;</span><br><span class="line">                <span class="comment">// 类型一致</span></span><br><span class="line">                <span class="keyword">return</span> (T) fromBean;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"this fromBean is not "</span> + clz + <span class="string">" type"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> copy(fromBean, clz.newInstance());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">List&lt;T&gt; <span class="title">copy</span><span class="params">(Collection&lt;?&gt; fromBeans, Class&lt;T&gt; cls)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> NoSuchMethodException, InvocationTargetException, IllegalAccessException,</span></span><br><span class="line"><span class="function">            NoSuchFieldException, ClassNotFoundException, InstantiationException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (CollectionUtils.isEmpty(fromBeans) || <span class="keyword">null</span> == cls) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;T&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Object fromBean : fromBeans) &#123;</span><br><span class="line">            T t = copy(fromBean, cls);</span><br><span class="line">            <span class="keyword">if</span> (t != <span class="keyword">null</span>) &#123;</span><br><span class="line">                list.add(t);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Author</span> fangyang</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Description</span> 要求 bean 中对应字段的属性名必须一致，普通类型字段要求字段类型一致</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Date</span> 10:12 2019/9/21</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Param</span> [fromBean, toBean] 从 fromBean 复制到 toBean</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> E</span></span><br><span class="line"><span class="comment">     **/</span></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"all"</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T, E&gt; <span class="function">E <span class="title">copy</span><span class="params">(Object fromBean, E toBean)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> NoSuchMethodException, InvocationTargetException, IllegalAccessException,</span></span><br><span class="line"><span class="function">            NoSuchFieldException, ClassNotFoundException, InstantiationException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (fromBean == <span class="keyword">null</span> || toBean == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        Class&lt;?&gt; fromClass = fromBean.getClass();</span><br><span class="line">        Class&lt;?&gt; toClass = toBean.getClass();</span><br><span class="line">        <span class="keyword">for</span> (Field field : fromClass.getDeclaredFields()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (field.getName().equals(SERIAL_FIELD_STR)) &#123;</span><br><span class="line">                <span class="comment">// 序列化字段，忽略</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (toClass.getDeclaredField(field.getName()) == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// toClass 中没有该属性字段</span></span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (isNormalField(field.getType())</span><br><span class="line">                        &amp;&amp; toClass.getDeclaredField(field.getName()).getType() != field.getType()) &#123;</span><br><span class="line">                    <span class="comment">// 属性是普通字段，且二者对应属性字段的类型不同</span></span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (NoSuchFieldException e) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String getMethodName = <span class="string">"get"</span> + StringUtils.capitalize(field.getName());</span><br><span class="line">            String setMethodName = <span class="string">"set"</span> + StringUtils.capitalize(field.getName());</span><br><span class="line">            String isMethodName = <span class="string">"is"</span> + StringUtils.capitalize(field.getName());</span><br><span class="line">            Object fieldValue;</span><br><span class="line">            <span class="keyword">if</span> (field.getType() == <span class="keyword">boolean</span>.class || field.getType() == Boolean.class) &#123;</span><br><span class="line">                <span class="comment">// boolean 类型</span></span><br><span class="line">                fieldValue = fromClass.getDeclaredMethod(isMethodName).invoke(fromBean);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                fieldValue = fromClass.getDeclaredMethod(getMethodName).invoke(fromBean);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">null</span> == fieldValue) &#123;</span><br><span class="line">                <span class="comment">// fromBean 无此属性值</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (isNormalField(field.getType())) &#123;</span><br><span class="line">                Method method = toClass.getDeclaredMethod(setMethodName, field.getType());</span><br><span class="line">                method.invoke(toBean, fieldValue);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (field.getType() == List.class) &#123;</span><br><span class="line">                List&lt;T&gt; list = (List&lt;T&gt;) fieldValue;</span><br><span class="line">                String str = toClass.getDeclaredField(field.getName()).getGenericType().toString();</span><br><span class="line">                List&lt;Object&gt; toList = getFieldIfList(list, str);</span><br><span class="line">                Method method = toClass.getDeclaredMethod(setMethodName, List.class);</span><br><span class="line">                method.invoke(toBean, toList);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (field.getType() == Map.class)&#123;</span><br><span class="line">                <span class="comment">// TODO Map 暂不处理</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// bean 中 bean</span></span><br><span class="line">                Class&lt;?&gt; newToClass = toClass.getDeclaredField(field.getName()).getType();</span><br><span class="line">                Object newToBean = newToClass.newInstance();</span><br><span class="line">                copy(fieldValue, newToBean);</span><br><span class="line">                Method method = toClass.getDeclaredMethod(setMethodName, newToClass);</span><br><span class="line">                method.invoke(toBean, newToBean);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> toBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Author</span> fangyang</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Description</span> 获取当源属性类型是 &#123;<span class="doctag">@link</span> List&#125; 时的目标属性值</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Date</span> 12:13 2019/9/22</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Param</span> [list, toBeanClassStr]</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> java.util.List&lt;java.lang.Object&gt;</span></span><br><span class="line"><span class="comment">     **/</span></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"all"</span>)</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> &lt;T, E&gt; <span class="function">List&lt;Object&gt; <span class="title">getFieldIfList</span><span class="params">(List&lt;T&gt; list, String toBeanClassStr)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> IllegalAccessException, InstantiationException, ClassNotFoundException,</span></span><br><span class="line"><span class="function">            NoSuchMethodException, NoSuchFieldException, InvocationTargetException </span>&#123;</span><br><span class="line">        String newBeanClassStr = toBeanClassStr.substring(LIST_STR_LEN + <span class="number">1</span>,</span><br><span class="line">                toBeanClassStr.length() - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (newBeanClassStr.contains(LIST_STR)) &#123;</span><br><span class="line">            List&lt;Object&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span> (T t : list) &#123;</span><br><span class="line">                <span class="comment">// 递归去掉 list 外壳</span></span><br><span class="line">                List&lt;Object&gt; toT = getFieldIfList((List&lt;E&gt;) t, newBeanClassStr);</span><br><span class="line">                result.add(toT);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        Class&lt;?&gt; toBeanClass = Class.forName(newBeanClassStr);</span><br><span class="line">        List&lt;Object&gt; toList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (isNormalField(toBeanClass)) &#123;</span><br><span class="line">            <span class="comment">// 说明 list 里面的元素是一般属性字段</span></span><br><span class="line">            toList.addAll(list);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (T t : list) &#123;</span><br><span class="line">                Object toT = copy(t, toBeanClass.newInstance());</span><br><span class="line">                toList.add(toT);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> toList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Author</span> fangyang</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Description</span> 返回该字段的类型是否是普通类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Date</span> 10:14 2019/9/21</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@Param</span> [clazz]</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> boolean</span></span><br><span class="line"><span class="comment">     **/</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNormalField</span><span class="params">(Class clazz)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> clazz == <span class="keyword">int</span>.class || clazz == String.class || clazz == <span class="keyword">float</span>.class</span><br><span class="line">                || clazz == <span class="keyword">double</span>.class || clazz == <span class="keyword">char</span>.class || clazz == <span class="keyword">byte</span>.class</span><br><span class="line">                || clazz == <span class="keyword">short</span>.class || clazz == Date.class || clazz == <span class="keyword">boolean</span>.class</span><br><span class="line">                || clazz == Integer.class || clazz == Float.class</span><br><span class="line">                || clazz == Double.class || clazz == Character.class || clazz == Byte.class</span><br><span class="line">                || clazz == Short.class || clazz == Boolean.class</span><br><span class="line">                || clazz == <span class="keyword">long</span>.class || clazz == Long.class;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>以上为博主应需写出的工具类，肯定不尽完美，读者发现有问题，可以提出来，博主很乐意一直完善该工具类~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果您对博主的原创满意，可以留个零头来支持下博主呢~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="羊末离殇 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="羊末离殇 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    羊末离殇
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://github.ymlsfly.xin/2019/09/22/CopyUtil/" title="java中复合bean的copy工具类">http://github.ymlsfly.xin/2019/09/22/CopyUtil/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Copy-util/" <i class="fa fa-tag"></i> Copy-util</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/24/面试(one)/" rel="next" title="面试(one) 某一次一面">
+                <i class="fa fa-chevron-left"></i> 面试(one) 某一次一面
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.jpg"
+                alt="羊末离殇" />
+            
+              <p class="site-author-name" itemprop="name">羊末离殇</p>
+              <p class="site-description motion-element" itemprop="description">常常都是徘徊...清醒如酒</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/1139195320" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:fy1139195320@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#诞生由来"><span class="nav-number">1.</span> <span class="nav-text">诞生由来</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以前用的简单包装工具类"><span class="nav-number">1.1.</span> <span class="nav-text">以前用的简单包装工具类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过反射写出的新的一套工具类"><span class="nav-number">2.</span> <span class="nav-text">通过反射写出的新的一套工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">2.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断是否是普通字段属性"><span class="nav-number">2.2.</span> <span class="nav-text">判断是否是普通字段属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整体工具类"><span class="nav-number">2.3.</span> <span class="nav-text">整体工具类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+      <div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=518076124&auto=0&height=66"></iframe>
+      </div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">生活不仅仅只有代码，还有诗与远方...</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">32.4k</span>
+  
+</div>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272117531'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1272117531%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+|
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  |
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共32.4k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272117531&web_id=1272117531" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytpLd6OP';
+      var conf = 'aabaed7d4c36a7ce477c04154ff2d8dc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <!-- 添加点击爆炸效果 -->
+  
+  <!-- 添加页面小宠物 -->
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    var trElement = document.getElementById('hexo-helper-live2d');
+    trElement.parentNode.removeChild(trElement);
+    return;
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/nipsilon.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
