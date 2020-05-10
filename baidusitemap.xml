@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://github.ymlsfly.xin/2020/03/11/CopyUtil/</loc>
+    <loc>http://github.ymlsfly.xin/2020/05/10/CopyUtil/</loc>
     <lastmod>2019-09-22T06:15:41.300Z</lastmod>
     <data>
         <display>
         <title>java中复合bean的copy工具类</title>
-        <pubTime>2020-03-11T06:43:05.542Z</pubTime>
+        <pubTime>2020-05-10T07:00:05.669Z</pubTime>
         
         <tag>Copy-util</tag>
          
@@ -87,12 +87,12 @@
 
     
   <url>
-    <loc>http://github.ymlsfly.xin/2020/03/11/hello-world/</loc>
+    <loc>http://github.ymlsfly.xin/2020/05/10/hello-world/</loc>
     <lastmod>2018-12-18T15:40:10.629Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
-        <pubTime>2020-03-11T06:43:05.551Z</pubTime>
+        <pubTime>2020-05-10T07:00:05.672Z</pubTime>
         
         <tag>hello</tag>
          
@@ -156,9 +156,9 @@
         <title>cannot be read or is not a valid ZIP file</title>
         <pubTime>2018-01-30T08:23:42.000Z</pubTime>
         
-        <tag>eclipse报错</tag>
-         
         <tag>maven</tag>
+         
+        <tag>eclipse报错</tag>
          
          
            
