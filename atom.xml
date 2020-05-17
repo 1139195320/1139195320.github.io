@@ -5,9 +5,9 @@
   <subtitle>与代码的持久博弈</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://github.ymlsfly.xin/"/>
+  <link href="http://blog.ymlsfly.xin/"/>
   <updated>2020-05-17T01:50:11.841Z</updated>
-  <id>http://github.ymlsfly.xin/</id>
+  <id>http://blog.ymlsfly.xin/</id>
   
   <author>
     <name>羊末离殇</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>进阶注解处理器 processor （一）</title>
-    <link href="http://github.ymlsfly.xin/2020/05/17/processor_one/"/>
-    <id>http://github.ymlsfly.xin/2020/05/17/processor_one/</id>
+    <link href="http://blog.ymlsfly.xin/2020/05/17/processor_one/"/>
+    <id>http://blog.ymlsfly.xin/2020/05/17/processor_one/</id>
     <published>2020-05-17T01:25:19.657Z</published>
     <updated>2020-05-17T01:50:11.841Z</updated>
     
@@ -34,21 +34,21 @@
     
     </summary>
     
-      <category term="java" scheme="http://github.ymlsfly.xin/categories/java/"/>
+      <category term="java" scheme="http://blog.ymlsfly.xin/categories/java/"/>
     
-      <category term="processor" scheme="http://github.ymlsfly.xin/categories/java/processor/"/>
+      <category term="processor" scheme="http://blog.ymlsfly.xin/categories/java/processor/"/>
     
-      <category term="annotation" scheme="http://github.ymlsfly.xin/categories/java/processor/annotation/"/>
+      <category term="annotation" scheme="http://blog.ymlsfly.xin/categories/java/processor/annotation/"/>
     
     
-      <category term="processor" scheme="http://github.ymlsfly.xin/tags/processor/"/>
+      <category term="processor" scheme="http://blog.ymlsfly.xin/tags/processor/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://github.ymlsfly.xin/2020/05/10/hello-world/"/>
-    <id>http://github.ymlsfly.xin/2020/05/10/hello-world/</id>
+    <link href="http://blog.ymlsfly.xin/2020/05/10/hello-world/"/>
+    <id>http://blog.ymlsfly.xin/2020/05/10/hello-world/</id>
     <published>2020-05-10T07:00:05.672Z</published>
     <updated>2018-12-18T15:40:10.629Z</updated>
     
@@ -63,17 +63,17 @@
     
     </summary>
     
-      <category term="默认" scheme="http://github.ymlsfly.xin/categories/%E9%BB%98%E8%AE%A4/"/>
+      <category term="默认" scheme="http://blog.ymlsfly.xin/categories/%E9%BB%98%E8%AE%A4/"/>
     
     
-      <category term="hello" scheme="http://github.ymlsfly.xin/tags/hello/"/>
+      <category term="hello" scheme="http://blog.ymlsfly.xin/tags/hello/"/>
     
   </entry>
   
   <entry>
     <title>java中复合bean的copy工具类</title>
-    <link href="http://github.ymlsfly.xin/2020/05/10/CopyUtil/"/>
-    <id>http://github.ymlsfly.xin/2020/05/10/CopyUtil/</id>
+    <link href="http://blog.ymlsfly.xin/2020/05/10/CopyUtil/"/>
+    <id>http://blog.ymlsfly.xin/2020/05/10/CopyUtil/</id>
     <published>2020-05-10T07:00:05.669Z</published>
     <updated>2019-09-22T06:15:41.300Z</updated>
     
@@ -88,19 +88,19 @@
     
     </summary>
     
-      <category term="java" scheme="http://github.ymlsfly.xin/categories/java/"/>
+      <category term="java" scheme="http://blog.ymlsfly.xin/categories/java/"/>
     
-      <category term="copy" scheme="http://github.ymlsfly.xin/categories/java/copy/"/>
+      <category term="copy" scheme="http://blog.ymlsfly.xin/categories/java/copy/"/>
     
     
-      <category term="Copy-util" scheme="http://github.ymlsfly.xin/tags/Copy-util/"/>
+      <category term="Copy-util" scheme="http://blog.ymlsfly.xin/tags/Copy-util/"/>
     
   </entry>
   
   <entry>
     <title>面试(one) 某一次一面</title>
-    <link href="http://github.ymlsfly.xin/2019/02/24/%E9%9D%A2%E8%AF%95(one)/"/>
-    <id>http://github.ymlsfly.xin/2019/02/24/面试(one)/</id>
+    <link href="http://blog.ymlsfly.xin/2019/02/24/%E9%9D%A2%E8%AF%95(one)/"/>
+    <id>http://blog.ymlsfly.xin/2019/02/24/面试(one)/</id>
     <published>2019-02-24T15:11:59.000Z</published>
     <updated>2019-02-25T16:18:17.290Z</updated>
     
@@ -116,17 +116,17 @@
     
     </summary>
     
-      <category term="面试" scheme="http://github.ymlsfly.xin/categories/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="http://blog.ymlsfly.xin/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
-      <category term="面试" scheme="http://github.ymlsfly.xin/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="http://blog.ymlsfly.xin/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>effect_java_study</title>
-    <link href="http://github.ymlsfly.xin/2018/12/19/effect-java-study/"/>
-    <id>http://github.ymlsfly.xin/2018/12/19/effect-java-study/</id>
+    <link href="http://blog.ymlsfly.xin/2018/12/19/effect-java-study/"/>
+    <id>http://blog.ymlsfly.xin/2018/12/19/effect-java-study/</id>
     <published>2018-12-19T14:07:07.000Z</published>
     <updated>2018-12-22T08:18:37.877Z</updated>
     
@@ -141,17 +141,17 @@
     
     </summary>
     
-      <category term="java" scheme="http://github.ymlsfly.xin/categories/java/"/>
+      <category term="java" scheme="http://blog.ymlsfly.xin/categories/java/"/>
     
     
-      <category term="effect-java" scheme="http://github.ymlsfly.xin/tags/effect-java/"/>
+      <category term="effect-java" scheme="http://blog.ymlsfly.xin/tags/effect-java/"/>
     
   </entry>
   
   <entry>
     <title>svn安装部署</title>
-    <link href="http://github.ymlsfly.xin/2018/12/19/svn/"/>
-    <id>http://github.ymlsfly.xin/2018/12/19/svn/</id>
+    <link href="http://blog.ymlsfly.xin/2018/12/19/svn/"/>
+    <id>http://blog.ymlsfly.xin/2018/12/19/svn/</id>
     <published>2018-12-19T12:45:37.000Z</published>
     <updated>2018-12-19T12:49:11.775Z</updated>
     
@@ -166,17 +166,17 @@
     
     </summary>
     
-      <category term="svn" scheme="http://github.ymlsfly.xin/categories/svn/"/>
+      <category term="svn" scheme="http://blog.ymlsfly.xin/categories/svn/"/>
     
     
-      <category term="svn" scheme="http://github.ymlsfly.xin/tags/svn/"/>
+      <category term="svn" scheme="http://blog.ymlsfly.xin/tags/svn/"/>
     
   </entry>
   
   <entry>
     <title>使用laydate来显示个性化的时间输入框</title>
-    <link href="http://github.ymlsfly.xin/2018/03/16/%E4%BD%BF%E7%94%A8laydate%E6%9D%A5%E6%98%BE%E7%A4%BA%E4%B8%AA%E6%80%A7%E5%8C%96%E7%9A%84%E6%97%B6%E9%97%B4%E8%BE%93%E5%85%A5%E6%A1%86/"/>
-    <id>http://github.ymlsfly.xin/2018/03/16/使用laydate来显示个性化的时间输入框/</id>
+    <link href="http://blog.ymlsfly.xin/2018/03/16/%E4%BD%BF%E7%94%A8laydate%E6%9D%A5%E6%98%BE%E7%A4%BA%E4%B8%AA%E6%80%A7%E5%8C%96%E7%9A%84%E6%97%B6%E9%97%B4%E8%BE%93%E5%85%A5%E6%A1%86/"/>
+    <id>http://blog.ymlsfly.xin/2018/03/16/使用laydate来显示个性化的时间输入框/</id>
     <published>2018-03-16T09:08:35.000Z</published>
     <updated>2018-03-16T11:26:51.860Z</updated>
     
@@ -191,17 +191,17 @@
     
     </summary>
     
-      <category term="日期时间输入框" scheme="http://github.ymlsfly.xin/categories/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E8%BE%93%E5%85%A5%E6%A1%86/"/>
+      <category term="日期时间输入框" scheme="http://blog.ymlsfly.xin/categories/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E8%BE%93%E5%85%A5%E6%A1%86/"/>
     
     
-      <category term="datetime" scheme="http://github.ymlsfly.xin/tags/datetime/"/>
+      <category term="datetime" scheme="http://blog.ymlsfly.xin/tags/datetime/"/>
     
   </entry>
   
   <entry>
     <title>cannot be read or is not a valid ZIP file</title>
-    <link href="http://github.ymlsfly.xin/2018/01/30/cannot-be-read-or-is-not-a-valid-ZIP-file/"/>
-    <id>http://github.ymlsfly.xin/2018/01/30/cannot-be-read-or-is-not-a-valid-ZIP-file/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/30/cannot-be-read-or-is-not-a-valid-ZIP-file/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/30/cannot-be-read-or-is-not-a-valid-ZIP-file/</id>
     <published>2018-01-30T08:23:42.000Z</published>
     <updated>2018-01-30T08:32:33.890Z</updated>
     
@@ -217,19 +217,19 @@
     
     </summary>
     
-      <category term="异常错误集" scheme="http://github.ymlsfly.xin/categories/%E5%BC%82%E5%B8%B8%E9%94%99%E8%AF%AF%E9%9B%86/"/>
+      <category term="异常错误集" scheme="http://blog.ymlsfly.xin/categories/%E5%BC%82%E5%B8%B8%E9%94%99%E8%AF%AF%E9%9B%86/"/>
     
     
-      <category term="maven" scheme="http://github.ymlsfly.xin/tags/maven/"/>
+      <category term="maven" scheme="http://blog.ymlsfly.xin/tags/maven/"/>
     
-      <category term="eclipse报错" scheme="http://github.ymlsfly.xin/tags/eclipse%E6%8A%A5%E9%94%99/"/>
+      <category term="eclipse报错" scheme="http://blog.ymlsfly.xin/tags/eclipse%E6%8A%A5%E9%94%99/"/>
     
   </entry>
   
   <entry>
     <title>zTree的试炼</title>
-    <link href="http://github.ymlsfly.xin/2018/01/29/zTree%E7%9A%84%E8%AF%95%E7%82%BC/"/>
-    <id>http://github.ymlsfly.xin/2018/01/29/zTree的试炼/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/29/zTree%E7%9A%84%E8%AF%95%E7%82%BC/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/29/zTree的试炼/</id>
     <published>2018-01-29T09:29:09.000Z</published>
     <updated>2018-01-29T11:04:52.745Z</updated>
     
@@ -244,17 +244,17 @@
     
     </summary>
     
-      <category term="JQuery插件" scheme="http://github.ymlsfly.xin/categories/JQuery%E6%8F%92%E4%BB%B6/"/>
+      <category term="JQuery插件" scheme="http://blog.ymlsfly.xin/categories/JQuery%E6%8F%92%E4%BB%B6/"/>
     
     
-      <category term="zTree" scheme="http://github.ymlsfly.xin/tags/zTree/"/>
+      <category term="zTree" scheme="http://blog.ymlsfly.xin/tags/zTree/"/>
     
   </entry>
   
   <entry>
     <title>高亮代码的集结</title>
-    <link href="http://github.ymlsfly.xin/2018/01/29/%E9%AB%98%E4%BA%AE%E4%BB%A3%E7%A0%81%E7%9A%84%E9%9B%86%E7%BB%93/"/>
-    <id>http://github.ymlsfly.xin/2018/01/29/高亮代码的集结/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/29/%E9%AB%98%E4%BA%AE%E4%BB%A3%E7%A0%81%E7%9A%84%E9%9B%86%E7%BB%93/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/29/高亮代码的集结/</id>
     <published>2018-01-29T03:23:34.000Z</published>
     <updated>2018-01-29T05:58:33.736Z</updated>
     
@@ -269,17 +269,17 @@
     
     </summary>
     
-      <category term="代码高亮" scheme="http://github.ymlsfly.xin/categories/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/"/>
+      <category term="代码高亮" scheme="http://blog.ymlsfly.xin/categories/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/"/>
     
     
-      <category term="highCode" scheme="http://github.ymlsfly.xin/tags/highCode/"/>
+      <category term="highCode" scheme="http://blog.ymlsfly.xin/tags/highCode/"/>
     
   </entry>
   
   <entry>
     <title>富文本simditor</title>
-    <link href="http://github.ymlsfly.xin/2018/01/29/%E5%AF%8C%E6%96%87%E6%9C%ACsimditor/"/>
-    <id>http://github.ymlsfly.xin/2018/01/29/富文本simditor/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/29/%E5%AF%8C%E6%96%87%E6%9C%ACsimditor/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/29/富文本simditor/</id>
     <published>2018-01-29T03:00:22.000Z</published>
     <updated>2018-01-29T03:19:03.342Z</updated>
     
@@ -295,19 +295,19 @@
     
     </summary>
     
-      <category term="富文本编辑器" scheme="http://github.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+      <category term="富文本编辑器" scheme="http://blog.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
     
-      <category term="富文本" scheme="http://github.ymlsfly.xin/tags/%E5%AF%8C%E6%96%87%E6%9C%AC/"/>
+      <category term="富文本" scheme="http://blog.ymlsfly.xin/tags/%E5%AF%8C%E6%96%87%E6%9C%AC/"/>
     
-      <category term="simditor" scheme="http://github.ymlsfly.xin/tags/simditor/"/>
+      <category term="simditor" scheme="http://blog.ymlsfly.xin/tags/simditor/"/>
     
   </entry>
   
   <entry>
     <title>linux上的tomcat</title>
-    <link href="http://github.ymlsfly.xin/2018/01/20/linux%E4%B8%8A%E7%9A%84tomcat/"/>
-    <id>http://github.ymlsfly.xin/2018/01/20/linux上的tomcat/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/20/linux%E4%B8%8A%E7%9A%84tomcat/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/20/linux上的tomcat/</id>
     <published>2018-01-20T05:28:17.000Z</published>
     <updated>2018-02-01T03:05:47.653Z</updated>
     
@@ -322,19 +322,19 @@
     
     </summary>
     
-      <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="http://blog.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="linux" scheme="http://github.ymlsfly.xin/tags/linux/"/>
+      <category term="linux" scheme="http://blog.ymlsfly.xin/tags/linux/"/>
     
-      <category term="tomcat" scheme="http://github.ymlsfly.xin/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://blog.ymlsfly.xin/tags/tomcat/"/>
     
   </entry>
   
   <entry>
     <title>linux配置jdk</title>
-    <link href="http://github.ymlsfly.xin/2018/01/20/linux%E9%85%8D%E7%BD%AEjdk/"/>
-    <id>http://github.ymlsfly.xin/2018/01/20/linux配置jdk/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/20/linux%E9%85%8D%E7%BD%AEjdk/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/20/linux配置jdk/</id>
     <published>2018-01-20T05:27:40.000Z</published>
     <updated>2018-01-29T11:20:46.853Z</updated>
     
@@ -349,19 +349,19 @@
     
     </summary>
     
-      <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="http://blog.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="linux" scheme="http://github.ymlsfly.xin/tags/linux/"/>
+      <category term="linux" scheme="http://blog.ymlsfly.xin/tags/linux/"/>
     
-      <category term="jdk" scheme="http://github.ymlsfly.xin/tags/jdk/"/>
+      <category term="jdk" scheme="http://blog.ymlsfly.xin/tags/jdk/"/>
     
   </entry>
   
   <entry>
     <title>Java设计模式之单例模式</title>
-    <link href="http://github.ymlsfly.xin/2018/01/20/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://github.ymlsfly.xin/2018/01/20/Java设计模式之单例模式/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/20/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/20/Java设计模式之单例模式/</id>
     <published>2018-01-20T05:10:30.000Z</published>
     <updated>2018-01-20T05:24:13.355Z</updated>
     
@@ -377,19 +377,19 @@
     
     </summary>
     
-      <category term="Java设计模式" scheme="http://github.ymlsfly.xin/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="Java设计模式" scheme="http://blog.ymlsfly.xin/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="java" scheme="http://github.ymlsfly.xin/tags/java/"/>
+      <category term="java" scheme="http://blog.ymlsfly.xin/tags/java/"/>
     
-      <category term="单例" scheme="http://github.ymlsfly.xin/tags/%E5%8D%95%E4%BE%8B/"/>
+      <category term="单例" scheme="http://blog.ymlsfly.xin/tags/%E5%8D%95%E4%BE%8B/"/>
     
   </entry>
   
   <entry>
     <title>富文本wangEditor</title>
-    <link href="http://github.ymlsfly.xin/2018/01/19/%E5%AF%8C%E6%96%87%E6%9C%ACwangEditor/"/>
-    <id>http://github.ymlsfly.xin/2018/01/19/富文本wangEditor/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/19/%E5%AF%8C%E6%96%87%E6%9C%ACwangEditor/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/19/富文本wangEditor/</id>
     <published>2018-01-19T15:49:08.000Z</published>
     <updated>2018-01-26T01:08:07.700Z</updated>
     
@@ -406,19 +406,19 @@
     
     </summary>
     
-      <category term="富文本编辑器" scheme="http://github.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+      <category term="富文本编辑器" scheme="http://blog.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
     
-      <category term="富文本" scheme="http://github.ymlsfly.xin/tags/%E5%AF%8C%E6%96%87%E6%9C%AC/"/>
+      <category term="富文本" scheme="http://blog.ymlsfly.xin/tags/%E5%AF%8C%E6%96%87%E6%9C%AC/"/>
     
-      <category term="wangEditor" scheme="http://github.ymlsfly.xin/tags/wangEditor/"/>
+      <category term="wangEditor" scheme="http://blog.ymlsfly.xin/tags/wangEditor/"/>
     
   </entry>
   
   <entry>
     <title>富文本summernote</title>
-    <link href="http://github.ymlsfly.xin/2018/01/19/%E5%AF%8C%E6%96%87%E6%9C%ACsummernote/"/>
-    <id>http://github.ymlsfly.xin/2018/01/19/富文本summernote/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/19/%E5%AF%8C%E6%96%87%E6%9C%ACsummernote/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/19/富文本summernote/</id>
     <published>2018-01-19T04:49:57.000Z</published>
     <updated>2018-01-26T01:07:54.810Z</updated>
     
@@ -435,19 +435,19 @@
     
     </summary>
     
-      <category term="富文本编辑器" scheme="http://github.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+      <category term="富文本编辑器" scheme="http://blog.ymlsfly.xin/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
     
-      <category term="富文本" scheme="http://github.ymlsfly.xin/tags/%E5%AF%8C%E6%96%87%E6%9C%AC/"/>
+      <category term="富文本" scheme="http://blog.ymlsfly.xin/tags/%E5%AF%8C%E6%96%87%E6%9C%AC/"/>
     
-      <category term="summernote" scheme="http://github.ymlsfly.xin/tags/summernote/"/>
+      <category term="summernote" scheme="http://blog.ymlsfly.xin/tags/summernote/"/>
     
   </entry>
   
   <entry>
     <title>剑指jdbc</title>
-    <link href="http://github.ymlsfly.xin/2018/01/18/%E5%89%91%E6%8C%87jdbc/"/>
-    <id>http://github.ymlsfly.xin/2018/01/18/剑指jdbc/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/18/%E5%89%91%E6%8C%87jdbc/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/18/剑指jdbc/</id>
     <published>2018-01-18T12:52:42.000Z</published>
     <updated>2018-01-18T13:31:37.692Z</updated>
     
@@ -462,19 +462,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://github.ymlsfly.xin/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://blog.ymlsfly.xin/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="jdbc" scheme="http://github.ymlsfly.xin/tags/jdbc/"/>
+      <category term="jdbc" scheme="http://blog.ymlsfly.xin/tags/jdbc/"/>
     
-      <category term="数据库" scheme="http://github.ymlsfly.xin/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://blog.ymlsfly.xin/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>拥有并启动多个Tomcat</title>
-    <link href="http://github.ymlsfly.xin/2018/01/18/%E6%8B%A5%E6%9C%89%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%A4%9A%E4%B8%AATomcat/"/>
-    <id>http://github.ymlsfly.xin/2018/01/18/拥有并启动多个Tomcat/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/18/%E6%8B%A5%E6%9C%89%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%A4%9A%E4%B8%AATomcat/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/18/拥有并启动多个Tomcat/</id>
     <published>2018-01-18T12:07:37.000Z</published>
     <updated>2018-01-19T16:13:45.896Z</updated>
     
@@ -491,21 +491,21 @@
     
     </summary>
     
-      <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="http://blog.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="server" scheme="http://github.ymlsfly.xin/tags/server/"/>
+      <category term="server" scheme="http://blog.ymlsfly.xin/tags/server/"/>
     
-      <category term="tomcat" scheme="http://github.ymlsfly.xin/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://blog.ymlsfly.xin/tags/tomcat/"/>
     
-      <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://blog.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>mantis的学习</title>
-    <link href="http://github.ymlsfly.xin/2018/01/18/mantis%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://github.ymlsfly.xin/2018/01/18/mantis的学习/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/18/mantis%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/18/mantis的学习/</id>
     <published>2018-01-18T04:38:57.000Z</published>
     <updated>2018-01-18T12:14:06.837Z</updated>
     
@@ -522,21 +522,21 @@
     
     </summary>
     
-      <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="http://blog.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="测试" scheme="http://github.ymlsfly.xin/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="http://blog.ymlsfly.xin/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://blog.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="mantis" scheme="http://github.ymlsfly.xin/tags/mantis/"/>
+      <category term="mantis" scheme="http://blog.ymlsfly.xin/tags/mantis/"/>
     
   </entry>
   
   <entry>
     <title>testlink的学习</title>
-    <link href="http://github.ymlsfly.xin/2018/01/18/testlink%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://github.ymlsfly.xin/2018/01/18/testlink的学习/</id>
+    <link href="http://blog.ymlsfly.xin/2018/01/18/testlink%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://blog.ymlsfly.xin/2018/01/18/testlink的学习/</id>
     <published>2018-01-18T01:02:06.000Z</published>
     <updated>2018-01-18T12:13:34.195Z</updated>
     
@@ -554,14 +554,14 @@
     
     </summary>
     
-      <category term="软件安装" scheme="http://github.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+      <category term="软件安装" scheme="http://blog.ymlsfly.xin/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="testlink" scheme="http://github.ymlsfly.xin/tags/testlink/"/>
+      <category term="testlink" scheme="http://blog.ymlsfly.xin/tags/testlink/"/>
     
-      <category term="测试" scheme="http://github.ymlsfly.xin/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="http://blog.ymlsfly.xin/tags/%E6%B5%8B%E8%AF%95/"/>
     
-      <category term="工具" scheme="http://github.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://blog.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
