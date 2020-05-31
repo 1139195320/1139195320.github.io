@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://blog.ymlsfly.xin/2020/05/31/processor_two/</loc>
+    <lastmod>2020-05-31T11:25:30.188Z</lastmod>
+    <data>
+        <display>
+        <title>进阶注解处理器 processor （二）</title>
+        <pubTime>2020-05-31T11:21:13.803Z</pubTime>
+        
+        <tag>processor</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="processor" url="http://blog.ymlsfly.xin/categories/java/processor/"/>
+          
+             
+              <breadCrumb title="annotation" url="http://blog.ymlsfly.xin/categories/java/processor/annotation/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.ymlsfly.xin/2020/05/17/processor_one/</loc>
     <lastmod>2020-05-17T01:50:11.841Z</lastmod>
     <data>
