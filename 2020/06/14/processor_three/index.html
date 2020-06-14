@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="什么是 processorprocessor 顾名思义，就是一个处理器，java中有对注解做处理的注解处理器，我们知道，如果一个注解定义了，而没被使用，其就相当于一个普通的注释，而注解又分不同的生命周期    123RetentionPolicy.SOURCERetentionPolicy.CLASSRetentionPolicy.RUNTIME SOURCE 生命周期的注解在编译期就会被丢弃，C">
+<meta name="description" content="序言该篇主于实战一个简单的 processor，代码备注很详细，如果对运行和语法还有疑问的请先查阅下前面几篇，重复内容此处就不赘述了~    annotation1234@Target(ElementType.METHOD)@Retention(RetentionPolicy.SOURCE)public @interface JackLog &amp;#123;&amp;#125; processor123456">
 <meta name="keywords" content="processor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="进阶注解处理器 processor （一）">
-<meta property="og:url" content="http://blog.ymlsfly.xin/2020/05/17/processor_one/index.html">
+<meta property="og:title" content="进阶注解处理器 processor （三）">
+<meta property="og:url" content="http://blog.ymlsfly.xin/2020/06/14/processor_three/index.html">
 <meta property="og:site_name" content="羊末离殇的独立博客">
-<meta property="og:description" content="什么是 processorprocessor 顾名思义，就是一个处理器，java中有对注解做处理的注解处理器，我们知道，如果一个注解定义了，而没被使用，其就相当于一个普通的注释，而注解又分不同的生命周期    123RetentionPolicy.SOURCERetentionPolicy.CLASSRetentionPolicy.RUNTIME SOURCE 生命周期的注解在编译期就会被丢弃，C">
+<meta property="og:description" content="序言该篇主于实战一个简单的 processor，代码备注很详细，如果对运行和语法还有疑问的请先查阅下前面几篇，重复内容此处就不赘述了~    annotation1234@Target(ElementType.METHOD)@Retention(RetentionPolicy.SOURCE)public @interface JackLog &amp;#123;&amp;#125; processor123456">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-17T01:50:11.841Z">
+<meta property="og:updated_time" content="2020-06-14T10:53:10.957Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="进阶注解处理器 processor （一）">
-<meta name="twitter:description" content="什么是 processorprocessor 顾名思义，就是一个处理器，java中有对注解做处理的注解处理器，我们知道，如果一个注解定义了，而没被使用，其就相当于一个普通的注释，而注解又分不同的生命周期    123RetentionPolicy.SOURCERetentionPolicy.CLASSRetentionPolicy.RUNTIME SOURCE 生命周期的注解在编译期就会被丢弃，C">
+<meta name="twitter:title" content="进阶注解处理器 processor （三）">
+<meta name="twitter:description" content="序言该篇主于实战一个简单的 processor，代码备注很详细，如果对运行和语法还有疑问的请先查阅下前面几篇，重复内容此处就不赘述了~    annotation1234@Target(ElementType.METHOD)@Retention(RetentionPolicy.SOURCE)public @interface JackLog &amp;#123;&amp;#125; processor123456">
 
 
 
@@ -146,7 +146,7 @@
 
 
 
-  <title>进阶注解处理器 processor （一） | 羊末离殇的独立博客</title>
+  <title>进阶注解处理器 processor （三） | 羊末离殇的独立博客</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.ymlsfly.xin/2020/05/17/processor_one/">
+    <link itemprop="mainEntityOfPage" href="http://blog.ymlsfly.xin/2020/06/14/processor_three/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="羊末离殇">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">进阶注解处理器 processor （一）</h1>
+          <h1 class="post-title" itemprop="name headline">进阶注解处理器 processor （三）</h1>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-17T09:25:19+08:00">
-                2020-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-14T18:54:24+08:00">
+                2020-06-14
               </time>
             
 
@@ -416,8 +416,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2020/05/17/processor_one/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2020/05/17/processor_one/" itemprop="commentsCount"></span>
+                <a href="/2020/06/14/processor_three/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2020/06/14/processor_three/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  594
+                  665
                 </span>
               
 
@@ -455,7 +455,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -476,23 +476,12 @@
       
 
       
-        <h3 id="什么是-processor"><a href="#什么是-processor" class="headerlink" title="什么是 processor"></a>什么是 processor</h3><p>processor 顾名思义，就是一个处理器，java中有对注解做处理的注解处理器，我们知道，如果一个注解定义了，而没被使用，其就相当于一个普通的注释，而注解又分不同的生命周期   </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RetentionPolicy.SOURCE</span><br><span class="line">RetentionPolicy.CLASS</span><br><span class="line">RetentionPolicy.RUNTIME</span><br></pre></td></tr></table></figure>
-<p>SOURCE 生命周期的注解在编译期就会被丢弃，CLASS 生命周期的注解在类加载的时候被丢弃，RUNTIME 生命周期的注解始终不丢弃。<br>用过spring boot系列的同学就都知道，其ioc就是通过 运行期注解来实现的，本文中学习注解处理器使用的是编译期注解，在编译期来做一些事儿~</p>
-<h3 id="怎么使用-processor"><a href="#怎么使用-processor" class="headerlink" title="怎么使用 processor"></a>怎么使用 processor</h3><p>1、新建一个要捕捉的编译期注解   </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnn &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2、新建一个处理器，通过实现AbstractProcessor的process方法    </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.annotation.processing.AbstractProcessor;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.processing.RoundEnvironment;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.processing.SupportedAnnotationTypes;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.processing.SupportedSourceVersion;</span><br><span class="line"><span class="keyword">import</span> javax.lang.model.SourceVersion;</span><br><span class="line"><span class="keyword">import</span> javax.lang.model.element.TypeElement;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SupportedSourceVersion</span>(SourceVersion.RELEASE_8)</span><br><span class="line"><span class="meta">@SupportedAnnotationTypes</span>(<span class="string">"com.jack.annotation.MyAnn"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyProcessor</span> <span class="keyword">extends</span> <span class="title">AbstractProcessor</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">process</span><span class="params">(Set&lt;? extends TypeElement&gt; annotations, </span></span></span><br><span class="line"><span class="function"><span class="params">                           RoundEnvironment roundEnv)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>SupportedSourceVersion 中指定支持的jdk版本。<br>SupportedAnnotationTypes 中指定要捕捉的注解类。</p>
-<p>3、配置pom文件，maven打包插件   </p>
-<p>4、配置处理器暴露文件<br>在 resources 目录下新建 META-INF/services 目录，在 META-INF/services 目录下新建 javax.annotation.processing.Processor 文件，在此文件中写入自定义处理器 processor 的全路径，换行分隔。   </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.jack.processor.MyProcessor</span><br></pre></td></tr></table></figure>
-<p>5、编译打包   </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -DskipTest=<span class="keyword">true</span></span><br></pre></td></tr></table></figure>
-<p>6、在另一个工程中引入上面生成的 jar 包，使用其注解，然后编译代码即可。</p>
-<p>tip：<br>如果不想通过打包 jar 来使用，也可以通过在一个工程中直接使用，但要求 processor 的编译一定要在使用此注解的编译之前，并且编译该类，要显示指定使用此注解处理器。   </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">javac java/com/jack/annotation/MyAnn.java</span><br><span class="line">javac java/com/jack/processor/MyProcessor.java</span><br><span class="line">javac -processor com.jack.processor.MyProcessor com/jack/test/Test.java</span><br></pre></td></tr></table></figure>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>以上是与注解处理器的初次会面，后续逐步进阶~</p>
+        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>该篇主于实战一个简单的 processor，代码备注很详细，如果对运行和语法还有疑问的请先查阅下前面几篇，重复内容此处就不赘述了~   </p>
+<h3 id="annotation"><a href="#annotation" class="headerlink" title="annotation"></a>annotation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> JackLog &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="processor"><a href="#processor" class="headerlink" title="processor"></a>processor</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.jack.annotation.JackLog;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.api.JavacTrees;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.model.JavacElements;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.processing.JavacProcessingEnvironment;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.tree.JCTree;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.tree.TreeMaker;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.tree.TreeTranslator;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.util.Context;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.util.List;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.util.Name;</span><br><span class="line"><span class="keyword">import</span> com.sun.tools.javac.util.Names;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.processing.*;</span><br><span class="line"><span class="keyword">import</span> javax.lang.model.SourceVersion;</span><br><span class="line"><span class="keyword">import</span> javax.lang.model.element.Element;</span><br><span class="line"><span class="keyword">import</span> javax.lang.model.element.TypeElement;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> jack</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SupportedAnnotationTypes</span>(<span class="string">"com.jack.annotation.JackLog"</span>)</span><br><span class="line"><span class="meta">@SupportedSourceVersion</span>(SourceVersion.RELEASE_8)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JackLogProcessor</span> <span class="keyword">extends</span> <span class="title">AbstractProcessor</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 抽象语法树对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> JavacTrees trees;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用于创建语法树节点的所有方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> TreeMaker treeMaker;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用于创建标识符</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Names names;</span><br><span class="line">    <span class="keyword">private</span> JavacElements elementUtils;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ProcessingEnvironment processingEnv)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.init(processingEnv);</span><br><span class="line">        <span class="keyword">this</span>.trees = JavacTrees.instance(processingEnv);</span><br><span class="line">        Context context = ((JavacProcessingEnvironment) processingEnv).getContext();</span><br><span class="line">        <span class="keyword">this</span>.treeMaker = TreeMaker.instance(context);</span><br><span class="line">        <span class="keyword">this</span>.names = Names.instance(context);</span><br><span class="line">        elementUtils = (JavacElements) processingEnv.getElementUtils();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">process</span><span class="params">(Set&lt;? extends TypeElement&gt; annotations,</span></span></span><br><span class="line"><span class="function"><span class="params">                           RoundEnvironment roundEnv)</span> </span>&#123;</span><br><span class="line">        Set&lt;? extends Element&gt; set = roundEnv.getElementsAnnotatedWith(JackLog.class);</span><br><span class="line">        set.forEach(element -&gt; &#123;</span><br><span class="line">            JCTree jcTree = trees.getTree(element);</span><br><span class="line">            jcTree.accept(<span class="keyword">new</span> TreeTranslator() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">visitMethodDef</span><span class="params">(JCTree.JCMethodDecl jcMethodDecl)</span> </span>&#123;</span><br><span class="line">                    doOperationMethod(jcMethodDecl);</span><br><span class="line">                    <span class="keyword">super</span>.visitMethodDef(jcMethodDecl);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">doOperationMethod</span><span class="params">(JCTree.JCMethodDecl jcMethodDecl)</span> </span>&#123;</span><br><span class="line">        treeMaker.pos = jcMethodDecl.pos;</span><br><span class="line">        jcMethodDecl.body = treeMaker.Block(<span class="number">0</span>, List.of(</span><br><span class="line">                getSentenceOne(),</span><br><span class="line">                jcMethodDecl.body,</span><br><span class="line">                getSentenceTwo()</span><br><span class="line">        ));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JCTree.<span class="function">JCStatement <span class="title">getSentenceOne</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Name systemName = elementUtils.getName(<span class="string">"System"</span>);</span><br><span class="line">        Name currentTimeMillisName = elementUtils.getName(<span class="string">"currentTimeMillis"</span>);</span><br><span class="line">        Name longName = elementUtils.getName(<span class="string">"Long"</span>);</span><br><span class="line">        <span class="comment">// 拼接 System.currentTimeMillis()</span></span><br><span class="line">        JCTree.JCFieldAccess s1 = treeMaker.Select(treeMaker.Ident(systemName),</span><br><span class="line">                currentTimeMillisName);</span><br><span class="line">        treeMaker.Exec(treeMaker.Apply(List.nil(), s1, List.nil()));</span><br><span class="line">        <span class="comment">// java.lang.Long fStart = System.currentTimeMillis()</span></span><br><span class="line">        <span class="keyword">return</span> treeMaker.VarDef(treeMaker.Modifiers(<span class="number">0</span>),</span><br><span class="line">                names.fromString(<span class="string">"fStart"</span>), treeMaker.Ident(longName),</span><br><span class="line">                treeMaker.Apply(List.nil(), s1, List.nil()));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JCTree.<span class="function">JCStatement <span class="title">getSentenceTwo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Name systemName = elementUtils.getName(<span class="string">"System"</span>);</span><br><span class="line">        Name currentTimeMillisName = elementUtils.getName(<span class="string">"currentTimeMillis"</span>);</span><br><span class="line">        Name outName = elementUtils.getName(<span class="string">"out"</span>);</span><br><span class="line">        Name printlnName = elementUtils.getName(<span class="string">"println"</span>);</span><br><span class="line">        <span class="comment">// 拼接 System.out</span></span><br><span class="line">        JCTree.JCFieldAccess s1 = treeMaker.Select(treeMaker.Ident(systemName), outName);</span><br><span class="line">        <span class="comment">// 拼接 System.out.println</span></span><br><span class="line">        JCTree.JCFieldAccess s2 = treeMaker.Select(s1, printlnName);</span><br><span class="line">        <span class="comment">// 拼接 System.currentTimeMillis()</span></span><br><span class="line">        JCTree.JCFieldAccess s3 = treeMaker.Select(treeMaker.Ident(systemName),</span><br><span class="line">                currentTimeMillisName);</span><br><span class="line">        <span class="comment">// 拼接 System.currentTimeMills() - fStart</span></span><br><span class="line">        JCTree.JCBinary s4 = treeMaker.Binary(JCTree.Tag.MINUS,</span><br><span class="line">                treeMaker.Apply(List.nil(), s3, List.nil()),</span><br><span class="line">                treeMaker.Ident(names.fromString(<span class="string">"fStart"</span>)));</span><br><span class="line">        JCTree.JCBinary s5 = treeMaker.Binary(JCTree.Tag.PLUS,</span><br><span class="line">                treeMaker.Literal(<span class="string">"耗时："</span>), s4);</span><br><span class="line">        JCTree.JCBinary s6 = treeMaker.Binary(JCTree.Tag.PLUS, s5,</span><br><span class="line">                treeMaker.Literal(<span class="string">"ms"</span>));</span><br><span class="line">        <span class="comment">// System.out.println("耗时：" + (System.currentTimeMills() - fStart) + "ms)</span></span><br><span class="line">        <span class="keyword">return</span> treeMaker.Exec(treeMaker.Apply(List.nil(), s2, List.of(s6)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>javax.annotation.processing.Processor<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.jack.processor.JackLogProcessor</span><br></pre></td></tr></table></figure></p>
+<p>…   </p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>第一个自定义 processor 的实战，后续逐步进阶~</p>
 
       
     </div>
@@ -552,7 +541,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://blog.ymlsfly.xin/2020/05/17/processor_one/" title="进阶注解处理器 processor （一）">http://blog.ymlsfly.xin/2020/05/17/processor_one/</a>
+    <a href="http://blog.ymlsfly.xin/2020/06/14/processor_three/" title="进阶注解处理器 processor （三）">http://blog.ymlsfly.xin/2020/06/14/processor_three/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -580,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2020/05/31/processor_two/" rel="next" title="进阶注解处理器 processor （二）">
+                <i class="fa fa-chevron-left"></i> 进阶注解处理器 processor （二）
               </a>
             
           </div>
@@ -589,10 +578,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/31/processor_two/" rel="prev" title="进阶注解处理器 processor （二）">
-                进阶注解处理器 processor （二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -782,7 +767,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-processor"><span class="nav-number">1.</span> <span class="nav-text">什么是 processor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么使用-processor"><span class="nav-number">2.</span> <span class="nav-text">怎么使用 processor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#annotation"><span class="nav-number">2.</span> <span class="nav-text">annotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#processor"><span class="nav-number">3.</span> <span class="nav-text">processor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">4.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>
