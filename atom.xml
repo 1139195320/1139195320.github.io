@@ -554,9 +554,9 @@
     
       <category term="server" scheme="http://blog.ymlsfly.xin/tags/server/"/>
     
-      <category term="tomcat" scheme="http://blog.ymlsfly.xin/tags/tomcat/"/>
-    
       <category term="工具" scheme="http://blog.ymlsfly.xin/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="tomcat" scheme="http://blog.ymlsfly.xin/tags/tomcat/"/>
     
   </entry>
   
