@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/08/%E4%BA%94%E5%AD%90%E6%A3%8B/</loc>
+    <lastmod>2023-04-16T10:31:50.608Z</lastmod>
+    <data>
+        <display>
+        <title>五子棋</title>
+        <pubTime>2023-04-08T06:15:43.000Z</pubTime>
+        
+        <tag>游戏</tag>
+         
+        <tag>play</tag>
+         
+        <tag>五子棋</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.ymlsfly.xin/2020/06/14/processor_three/</loc>
     <lastmod>2020-06-14T10:53:10.957Z</lastmod>
     <data>
@@ -428,9 +452,9 @@
         
         <tag>server</tag>
          
-        <tag>工具</tag>
-         
         <tag>tomcat</tag>
+         
+        <tag>工具</tag>
          
          
            
