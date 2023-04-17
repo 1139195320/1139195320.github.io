@@ -4,8 +4,33 @@
 
     
   <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/15/nacos-problem-one/</loc>
+    <lastmod>2023-04-17T11:07:41.218Z</lastmod>
+    <data>
+        <display>
+        <title>nacos多人发布冲突问题</title>
+        <pubTime>2023-04-15T02:20:28.000Z</pubTime>
+        
+        <tag>工具</tag>
+         
+        <tag>nacos</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="工具" url="http://blog.ymlsfly.xin/categories/java/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.ymlsfly.xin/2023/04/08/%E4%BA%94%E5%AD%90%E6%A3%8B/</loc>
-    <lastmod>2023-04-16T10:38:20.933Z</lastmod>
+    <lastmod>2023-04-16T23:55:58.815Z</lastmod>
     <data>
         <display>
         <title>五子棋</title>
@@ -21,6 +46,9 @@
            
              
               <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="play" url="http://blog.ymlsfly.xin/categories/java/play/"/>
           
         </display>
     </data>
