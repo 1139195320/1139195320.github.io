@@ -4,6 +4,156 @@
 
     
   <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/22/JFreeChart/</loc>
+    <lastmod>2023-04-22T03:11:52.157Z</lastmod>
+    <data>
+        <display>
+        <title>JFreeChart初学习</title>
+        <pubTime>2023-04-22T03:20:22.000Z</pubTime>
+        
+        <tag>JFreeChart</tag>
+         
+        <tag>工具类</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="工具类" url="http://blog.ymlsfly.xin/categories/java/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/22/batch-insert-jdbcTemplate/</loc>
+    <lastmod>2023-04-22T02:52:04.287Z</lastmod>
+    <data>
+        <display>
+        <title>batch-insert-JdbcTemplate</title>
+        <pubTime>2023-04-22T03:45:22.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>batchInsert</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="mysql" url="http://blog.ymlsfly.xin/categories/java/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/22/batch-insert-dynamic/</loc>
+    <lastmod>2023-04-22T02:51:44.943Z</lastmod>
+    <data>
+        <display>
+        <title>batch-insert-dynamic-sql</title>
+        <pubTime>2023-04-22T03:40:22.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>batchInsert</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="mysql" url="http://blog.ymlsfly.xin/categories/java/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/22/batch-insert-mybatis/</loc>
+    <lastmod>2023-04-22T02:51:27.327Z</lastmod>
+    <data>
+        <display>
+        <title>batch-insert-mybatis</title>
+        <pubTime>2023-04-22T03:35:22.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>batchInsert</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="mysql" url="http://blog.ymlsfly.xin/categories/java/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/22/batch-insert-mybatis-plus/</loc>
+    <lastmod>2023-04-22T02:51:10.262Z</lastmod>
+    <data>
+        <display>
+        <title>batch-insert-mybatis-plus</title>
+        <pubTime>2023-04-22T03:30:22.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>batchInsert</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="mysql" url="http://blog.ymlsfly.xin/categories/java/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.ymlsfly.xin/2023/04/22/batch-insert-mybatis-provider/</loc>
+    <lastmod>2023-04-22T02:50:50.830Z</lastmod>
+    <data>
+        <display>
+        <title>batch-insert-mybatis-provider</title>
+        <pubTime>2023-04-22T03:25:22.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>batchInsert</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.ymlsfly.xin/categories/java/"/>
+          
+             
+              <breadCrumb title="mysql" url="http://blog.ymlsfly.xin/categories/java/mysql/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.ymlsfly.xin/2023/04/18/hashMap-put/</loc>
     <lastmod>2023-04-18T10:37:11.511Z</lastmod>
     <data>

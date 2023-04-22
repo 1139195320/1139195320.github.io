@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32×32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16×16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon32×32.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JFreeChart,工具类," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="羊末离殇的独立博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前言JFreeChart是JAVA平台上的一个开放的图表绘制类库，可生成饼图（pie charts）、柱状图（bar charts）、散点图（scatter plots）、时序图（time series）、甘特图（Gantt charts）等等多种图表。 贴上JFreeChart的git地址：https://github.com/jfree/jfreechart 本文对JFreeChart做一个初">
+<meta name="keywords" content="JFreeChart,工具类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JFreeChart初学习">
+<meta property="og:url" content="http://blog.ymlsfly.xin/2023/04/22/JFreeChart/index.html">
+<meta property="og:site_name" content="羊末离殇的独立博客">
+<meta property="og:description" content="前言JFreeChart是JAVA平台上的一个开放的图表绘制类库，可生成饼图（pie charts）、柱状图（bar charts）、散点图（scatter plots）、时序图（time series）、甘特图（Gantt charts）等等多种图表。 贴上JFreeChart的git地址：https://github.com/jfree/jfreechart 本文对JFreeChart做一个初">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/1139195320/imgs/master/JFreeChart/1.png">
+<meta property="og:updated_time" content="2023-04-22T03:11:52.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JFreeChart初学习">
+<meta name="twitter:description" content="前言JFreeChart是JAVA平台上的一个开放的图表绘制类库，可生成饼图（pie charts）、柱状图（bar charts）、散点图（scatter plots）、时序图（time series）、甘特图（Gantt charts）等等多种图表。 贴上JFreeChart的git地址：https://github.com/jfree/jfreechart 本文对JFreeChart做一个初">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/1139195320/imgs/master/JFreeChart/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'OYGXKELMMB',
+      apiKey: 'c815ff19114659713ee5c47593a60216',
+      indexName: 'index-fy-blog-1',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与${query}相关的内容","hits_stats":"找到${hits}条相关记录，耗时${time}毫秒"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>JFreeChart初学习 | 羊末离殇的独立博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/1139195320"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">羊末离殇的独立博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">单身狗在奋斗</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+  
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ymlsfly.xin/2023/04/22/JFreeChart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="羊末离殇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/tx.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="羊末离殇的独立博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JFreeChart初学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-04-22T11:20:22+08:00">
+                2023-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/工具类/" itemprop="url" rel="index">
+                    <span itemprop="name">工具类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2023/04/22/JFreeChart/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2023/04/22/JFreeChart/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,728
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>JFreeChart是JAVA平台上的一个开放的图表绘制类库，可生成饼图（pie charts）、柱状图（bar charts）、散点图（scatter plots）、时序图（time series）、甘特图（Gantt charts）等等多种图表。</p>
+<p>贴上JFreeChart的git地址：<a href="https://github.com/jfree/jfreechart" target="_blank" rel="noopener">https://github.com/jfree/jfreechart</a></p>
+<p>本文对JFreeChart做一个初步的介绍及使用，博主做了一个简单的封装，拿来即用。</p>
+<h4 id="工具类介绍"><a href="#工具类介绍" class="headerlink" title="工具类介绍"></a>工具类介绍</h4><h5 id="maven-依赖引入"><a href="#maven-依赖引入" class="headerlink" title="maven 依赖引入"></a>maven 依赖引入</h5><p>在项目工程的 pom.xml 中引入 JFreeChart 依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.jfree<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jfreechart<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="chart-配置类"><a href="#chart-配置类" class="headerlink" title="chart 配置类"></a>chart 配置类</h5><p>用于外部配置 chart 配置信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.AccessLevel;</span><br><span class="line"><span class="keyword">import</span> lombok.AllArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.Builder;</span><br><span class="line"><span class="keyword">import</span> lombok.Getter;</span><br><span class="line"><span class="keyword">import</span> lombok.NoArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.Setter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Font;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description：chart 配置信息</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> fy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span>(access = AccessLevel.PRIVATE)</span><br><span class="line"><span class="meta">@AllArgsConstructor</span>(access = AccessLevel.PRIVATE)</span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChartConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 图标题</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * x 轴</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String labelX;</span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * y 轴</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> String labelY;</span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 是否显示图例</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> legend;</span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 采用标准生成器</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> tooltips;</span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 是否生成超链接</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> urls;</span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 标题字体</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Font titleFont;</span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 轴字体</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Font labelFont;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * x 轴是否是 number 类型</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isNumX;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 线条颜色，按数据的设置顺序指定，跳过需指定null</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Color&gt; lineColorList;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 线条粗细，按数据的设置顺序指定，跳过需指定null</span></span><br><span class="line"><span class="comment">     * 默认的粗细为：2.0f</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Float&gt; lineStrokeList;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="chart-数据"><a href="#chart-数据" class="headerlink" title="chart 数据"></a>chart 数据</h5><p>用于外部输入需要绘图的 chart 数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description：chart 数据</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> fy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChartBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String columnKey;</span><br><span class="line">    <span class="keyword">private</span> Number columnKeyNum;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> val;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChartBean</span><span class="params">(String columnKey, <span class="keyword">double</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.columnKey = columnKey;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChartBean</span><span class="params">(Number columnKeyNum, <span class="keyword">double</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.columnKeyNum = columnKeyNum;</span><br><span class="line">        <span class="keyword">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="逻辑处理工具类"><a href="#逻辑处理工具类" class="headerlink" title="逻辑处理工具类"></a>逻辑处理工具类</h5><p>封装 绘制 JFreeChart 图 的逻辑代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fy.util.chart.bean.ChartBean;</span><br><span class="line"><span class="keyword">import</span> com.fy.util.chart.bean.ChartConfig;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.ChartFactory;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.ChartFrame;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.JFreeChart;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.axis.CategoryAxis;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.axis.ValueAxis;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.plot.CategoryPlot;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.plot.Plot;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.plot.PlotOrientation;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.plot.XYPlot;</span><br><span class="line"><span class="keyword">import</span> org.jfree.chart.renderer.xy.XYItemRenderer;</span><br><span class="line"><span class="keyword">import</span> org.jfree.data.category.CategoryDataset;</span><br><span class="line"><span class="keyword">import</span> org.jfree.data.category.DefaultCategoryDataset;</span><br><span class="line"><span class="keyword">import</span> org.jfree.data.xy.XYDataset;</span><br><span class="line"><span class="keyword">import</span> org.jfree.data.xy.XYSeries;</span><br><span class="line"><span class="keyword">import</span> org.jfree.data.xy.XYSeriesCollection;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.BasicStroke;</span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Font;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Description：JFreeChart 工具类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> fy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JFreeChartUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 绘制 JFreeChart 图</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@author</span> fy</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dataMap 数据信息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> config 绘制的配置信息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">makeJFreeChart</span><span class="params">(Map&lt;String, List&lt;ChartBean&gt;&gt; dataMap,</span></span></span><br><span class="line"><span class="function"><span class="params">                                      ChartConfig config)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isNumX = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (config != <span class="keyword">null</span>) &#123;</span><br><span class="line">            isNumX = config.isNumX();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isNumX) &#123;</span><br><span class="line">            doMakeJFreeChartNum(dataMap, config);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            doMakeJFreeChart(dataMap, config);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doMakeJFreeChart</span><span class="params">(Map&lt;String, List&lt;ChartBean&gt;&gt; dataMap,</span></span></span><br><span class="line"><span class="function"><span class="params">                                        ChartConfig config)</span> </span>&#123;</span><br><span class="line">        DefaultCategoryDataset dataset = <span class="keyword">new</span> DefaultCategoryDataset();</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, List&lt;ChartBean&gt;&gt; entry : dataMap.entrySet()) &#123;</span><br><span class="line">            String rowKey = entry.getKey();</span><br><span class="line">            List&lt;ChartBean&gt; list = entry.getValue();</span><br><span class="line">            <span class="keyword">for</span> (ChartBean chartBean : list) &#123;</span><br><span class="line">                dataset.addValue(chartBean.getVal(), rowKey, chartBean.getColumnKey());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        JFreeChart jFreeChart = buildLineChart(config, dataset);</span><br><span class="line">        CategoryPlot plot = (CategoryPlot)jFreeChart.getPlot();</span><br><span class="line">        <span class="comment">// 设置轴字体</span></span><br><span class="line">        <span class="comment">// X 轴</span></span><br><span class="line">        CategoryAxis domainAxis = plot.getDomainAxis();</span><br><span class="line">        <span class="comment">// Y 轴</span></span><br><span class="line">        ValueAxis rangeAxis = plot.getRangeAxis();</span><br><span class="line">        Font labelFont = config.getLabelFont();</span><br><span class="line">        <span class="keyword">if</span> (labelFont != <span class="keyword">null</span>) &#123;</span><br><span class="line">            domainAxis.setLabelFont(labelFont);</span><br><span class="line">            rangeAxis.setLabelFont(labelFont);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 背景底部横虚线</span></span><br><span class="line">        plot.setRangeGridlinePaint(Color.BLUE);</span><br><span class="line">        <span class="comment">// 设置是否显示水平方向背景线,默认值为 true</span></span><br><span class="line">        plot.setRangeGridlinesVisible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">// 设置是否显示垂直方向背景线,默认值为 false</span></span><br><span class="line">        plot.setDomainGridlinesVisible(<span class="keyword">true</span>);</span><br><span class="line">        showPlot(plot, jFreeChart, config.getTitle());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doMakeJFreeChartNum</span><span class="params">(Map&lt;String, List&lt;ChartBean&gt;&gt; dataMap,</span></span></span><br><span class="line"><span class="function"><span class="params">                                            ChartConfig config)</span> </span>&#123;</span><br><span class="line">        XYSeriesCollection collection = <span class="keyword">new</span> XYSeriesCollection();</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, List&lt;ChartBean&gt;&gt; entry : dataMap.entrySet()) &#123;</span><br><span class="line">            XYSeries xySeries = <span class="keyword">new</span> XYSeries(entry.getKey());</span><br><span class="line">            List&lt;ChartBean&gt; list = entry.getValue();</span><br><span class="line">            <span class="keyword">for</span> (ChartBean chartBean : list) &#123;</span><br><span class="line">                xySeries.add(chartBean.getColumnKeyNum(), chartBean.getVal());</span><br><span class="line">            &#125;</span><br><span class="line">            collection.addSeries(xySeries);</span><br><span class="line">        &#125;</span><br><span class="line">        JFreeChart jFreeChart = buildXYLineChart(config, collection);</span><br><span class="line">        XYPlot plot = (XYPlot) jFreeChart.getPlot();</span><br><span class="line">        <span class="comment">// 设置轴字体</span></span><br><span class="line">        <span class="comment">// X 轴</span></span><br><span class="line">        ValueAxis domainAxis = plot.getDomainAxis();</span><br><span class="line">        <span class="comment">// Y 轴</span></span><br><span class="line">        ValueAxis rangeAxis = plot.getRangeAxis();</span><br><span class="line">        Font labelFont = config.getLabelFont();</span><br><span class="line">        <span class="keyword">if</span> (labelFont != <span class="keyword">null</span>) &#123;</span><br><span class="line">            domainAxis.setLabelFont(labelFont);</span><br><span class="line">            rangeAxis.setLabelFont(labelFont);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 背景底部横虚线</span></span><br><span class="line">        plot.setRangeGridlinePaint(Color.BLUE);</span><br><span class="line">        <span class="comment">// 设置是否显示水平方向背景线,默认值为 true</span></span><br><span class="line">        plot.setRangeGridlinesVisible(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">// 设置是否显示垂直方向背景线,默认值为 false</span></span><br><span class="line">        plot.setDomainGridlinesVisible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置数据线条颜色及粗细</span></span><br><span class="line">        buildLineColorAndStroke(plot, config);</span><br><span class="line"></span><br><span class="line">        showPlot(plot, jFreeChart, config.getTitle());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">buildLineColorAndStroke</span><span class="params">(XYPlot plot, ChartConfig config)</span> </span>&#123;</span><br><span class="line">        XYItemRenderer renderer = plot.getRenderer();</span><br><span class="line">        List&lt;Color&gt; lineColorList = config.getLineColorList();</span><br><span class="line">        <span class="keyword">if</span> (lineColorList != <span class="keyword">null</span> &amp;&amp; lineColorList.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lineColorList.size(); i++) &#123;</span><br><span class="line">                Color color = lineColorList.get(i);</span><br><span class="line">                <span class="keyword">if</span> (color != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    renderer.setSeriesPaint(i, color);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Float&gt; lineStrokeList = config.getLineStrokeList();</span><br><span class="line">        <span class="keyword">if</span> (lineStrokeList != <span class="keyword">null</span> &amp;&amp; lineStrokeList.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lineStrokeList.size(); i++) &#123;</span><br><span class="line">                Float stoke = lineStrokeList.get(i);</span><br><span class="line">                <span class="keyword">if</span> (stoke != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    renderer.setSeriesStroke(i, <span class="keyword">new</span> BasicStroke(stoke));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showPlot</span><span class="params">(Plot plot, JFreeChart jFreeChart, String title)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 设置背景色</span></span><br><span class="line">        plot.setBackgroundPaint(Color.LIGHT_GRAY);</span><br><span class="line">        <span class="comment">// 边界线</span></span><br><span class="line">        plot.setOutlinePaint(Color.RED);</span><br><span class="line">        plot.setBackgroundAlpha(<span class="number">0.5f</span>);</span><br><span class="line">        plot.setNoDataMessage(<span class="string">"无对应的数据，请检查数据信息！"</span>);</span><br><span class="line">        ChartFrame chartFrame = <span class="keyword">new</span> ChartFrame(title, jFreeChart);</span><br><span class="line">        chartFrame.pack();</span><br><span class="line">        chartFrame.setVisible(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> JFreeChart <span class="title">buildLineChart</span><span class="params">(ChartConfig config, CategoryDataset dataset)</span> </span>&#123;</span><br><span class="line">        JFreeChart jFreeChart = ChartFactory.createLineChart(config.getTitle(),</span><br><span class="line">                config.getLabelX(), config.getLabelY(),</span><br><span class="line">                dataset,</span><br><span class="line">                PlotOrientation.VERTICAL,</span><br><span class="line">                <span class="comment">// 是否显示图例</span></span><br><span class="line">                config.isLegend(),</span><br><span class="line">                <span class="comment">// 采用标准生成器</span></span><br><span class="line">                config.isTooltips(),</span><br><span class="line">                <span class="comment">// 是否生成超链接</span></span><br><span class="line">                config.isUrls());</span><br><span class="line"></span><br><span class="line">        Font titleFont = config.getTitleFont();</span><br><span class="line">        <span class="keyword">if</span> (titleFont != <span class="keyword">null</span>) &#123;</span><br><span class="line">            jFreeChart.getTitle().setFont(titleFont);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> jFreeChart;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> JFreeChart <span class="title">buildXYLineChart</span><span class="params">(ChartConfig config, XYDataset xyDataset)</span> </span>&#123;</span><br><span class="line">        JFreeChart jFreeChart = ChartFactory.createXYLineChart(config.getTitle(),</span><br><span class="line">                config.getLabelX(), config.getLabelY(),</span><br><span class="line">                xyDataset,</span><br><span class="line">                PlotOrientation.VERTICAL,</span><br><span class="line">                <span class="comment">// 是否显示图例</span></span><br><span class="line">                config.isLegend(),</span><br><span class="line">                <span class="comment">// 采用标准生成器</span></span><br><span class="line">                config.isTooltips(),</span><br><span class="line">                <span class="comment">// 是否生成超链接</span></span><br><span class="line">                config.isUrls());</span><br><span class="line"></span><br><span class="line">        Font titleFont = config.getTitleFont();</span><br><span class="line">        <span class="keyword">if</span> (titleFont != <span class="keyword">null</span>) &#123;</span><br><span class="line">            jFreeChart.getTitle().setFont(titleFont);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> jFreeChart;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="工具类使用"><a href="#工具类使用" class="headerlink" title="工具类使用"></a>工具类使用</h5><p>指定需要的配置，输入数据源信息，简单调用即可绘制，下面用简单的数据做示例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">ChartConfig config = ChartConfig.builder()</span><br><span class="line">		.title(<span class="string">"性能分析"</span>)</span><br><span class="line">		.labelX(<span class="string">"数据数量/w条"</span>)</span><br><span class="line">		.labelY(<span class="string">"耗时/s"</span>)</span><br><span class="line">		.legend(<span class="keyword">true</span>)</span><br><span class="line">		.tooltips(<span class="keyword">true</span>)</span><br><span class="line">		.titleFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>, Font.BOLD, <span class="number">14</span>))</span><br><span class="line">		.labelFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>, Font.PLAIN, <span class="number">12</span>))</span><br><span class="line">		.isNumX(<span class="keyword">true</span>)</span><br><span class="line">		.lineColorList(Arrays.asList(Color.pink, <span class="keyword">null</span>, Color.YELLOW))</span><br><span class="line">		.lineStrokeList(Arrays.asList(<span class="number">3f</span>, <span class="number">5f</span>, <span class="number">3f</span>))</span><br><span class="line">		.build();</span><br><span class="line">Map&lt;String, List&lt;ChartBean&gt;&gt; dataMap = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">3</span>);</span><br><span class="line">dataMap.put(<span class="string">"ONE"</span>, Arrays.asList(</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">1</span>, <span class="number">1.6</span>),</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">80</span>, <span class="number">42</span>),</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">24</span>, <span class="number">10</span>)));</span><br><span class="line">dataMap.put(<span class="string">"TWO"</span>, Arrays.asList(</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">1</span>, <span class="number">0.5</span>),</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">80</span>, <span class="number">34</span>),</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">24</span>, <span class="number">20</span>)));</span><br><span class="line">dataMap.put(<span class="string">"THREE"</span>, Arrays.asList(</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">1</span>, <span class="number">1.1</span>),</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">80</span>, <span class="number">180</span>),</span><br><span class="line">		<span class="keyword">new</span> ChartBean(<span class="number">24</span>, <span class="number">18</span>)));</span><br><span class="line">JFreeChartUtil.makeJFreeChart(dataMap, config);</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/1139195320/imgs/master/JFreeChart/1.png" alt=""></p>
+<h4 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h4><p>到此，该简单的工具类就介绍完毕了，可以作为初步的学习及使用，当然，还有更多完善的空间，等待咱们一起完善 loading</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果您对博主的原创满意，欢迎您继续支持下博主~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="羊末离殇 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="羊末离殇 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    羊末离殇
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.ymlsfly.xin/2023/04/22/JFreeChart/" title="JFreeChart初学习">http://blog.ymlsfly.xin/2023/04/22/JFreeChart/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JFreeChart/" <i class="fa fa-tag"></i> JFreeChart</a>
+          
+            <a href="/tags/工具类/" <i class="fa fa-tag"></i> 工具类</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/04/18/hashMap-put/" rel="next" title="HashMap-put剖析">
+                <i class="fa fa-chevron-left"></i> HashMap-put剖析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/04/22/batch-insert-mybatis-provider/" rel="prev" title="batch-insert-mybatis-provider">
+                batch-insert-mybatis-provider <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/tx.jpg"
+                alt="羊末离殇" />
+            
+              <p class="site-author-name" itemprop="name">羊末离殇</p>
+              <p class="site-description motion-element" itemprop="description">希望2020万事如意吧</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/1139195320" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:fy1139195320@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工具类介绍"><span class="nav-number">2.</span> <span class="nav-text">工具类介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#maven-依赖引入"><span class="nav-number">2.1.</span> <span class="nav-text">maven 依赖引入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#chart-配置类"><span class="nav-number">2.2.</span> <span class="nav-text">chart 配置类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#chart-数据"><span class="nav-number">2.3.</span> <span class="nav-text">chart 数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#逻辑处理工具类"><span class="nav-number">2.4.</span> <span class="nav-text">逻辑处理工具类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工具类使用"><span class="nav-number">2.5.</span> <span class="nav-text">工具类使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+      <div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=518076124&auto=0&height=66"></iframe>
+      </div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272117531'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1272117531%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+|
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  |
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共47.3k字</span>
+</div>
+
+
+
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
+   
+  <span class="author" itemprop="copyrightHolder"><a target="_blank" href="http://beian.miit.gov.cn/">鄂ICP备17018022号-1</a></span>
+
+</div>
+
+        
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1272117531&web_id=1272117531" language="JavaScript"></script>
+  </div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytpLd6OP';
+      var conf = 'aabaed7d4c36a7ce477c04154ff2d8dc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <!-- 添加点击爆炸效果 -->
+  
+  <!-- 添加页面小宠物 -->
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    var trElement = document.getElementById('hexo-helper-live2d');
+    trElement.parentNode.removeChild(trElement);
+    return;
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/nipsilon.model.json", 0.5);});
+})();
+</script>
+
+</body>
+</html>
